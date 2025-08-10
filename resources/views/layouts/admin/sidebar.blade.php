@@ -19,6 +19,16 @@
                  <div class="menu-title">Dashboard</div>
              </a>
          </li>
+
+         {{-- testimonial --}}
+         <li>
+             <a href="{{ route('testimonial.list') }}">
+                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 </div>
+                 <div class="menu-title">Testimonials</div>
+             </a>
+         </li>
+         {{-- ends  --}}
          <li>
              <a class="has-arrow" href="javascript:;">
                  <div class="parent-icon"><i class="bi bi-music-note-list"></i>
