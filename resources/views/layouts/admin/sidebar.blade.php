@@ -28,6 +28,14 @@
                  <div class="menu-title">Testimonials</div>
              </a>
          </li>
+
+         <li>
+             <a href="{{ route('file.view') }}">
+                 <div class="parent-icon"><i class="bi bi-grid-fill"></i>
+                 </div>
+                 <div class="menu-title">File Manager</div>
+             </a>
+         </li>
          {{-- ends  --}}
          <li>
              <a class="has-arrow" href="javascript:;">

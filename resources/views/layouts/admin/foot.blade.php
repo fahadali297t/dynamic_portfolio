@@ -15,6 +15,7 @@
 <!--app-->
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script src="{{ asset('assets/js/index4.js') }}"></script>
+<script src="{{ asset('assets/admin.js') }}"></script>
 <script>
     new PerfectScrollbar(".best-product")
 </script>

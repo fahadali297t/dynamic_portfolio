@@ -59,3 +59,54 @@ html.dark-theme .select {
 
     background: #1a2232;
 }
+
+.file_upload_container {
+    position: fixed; /* Use fixed for full viewport coverage */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Higher z-index for topmost layer */
+    background-color: #1a2232;
+    overflow: hidden; /* Prevent scrolling inside container */
+}
+
+.one_line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#image_viewer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+#image_viewer img {
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 10px;
+}
+#image_viewer video {
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 10px;
+}
+#file_name {
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #1a2232 !important;
+    color: white !important;
+}
