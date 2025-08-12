@@ -5,12 +5,11 @@ use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\UserController;
 use App\Models\FileManager;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'viewHome'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

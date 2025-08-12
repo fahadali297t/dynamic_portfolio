@@ -146,7 +146,7 @@ class FileManagerController extends Controller
     // for Images to show 
     public function viewImage()
     {
-        $files = FileManager::where('type', 'image')->get();
+        $files = FileManager::where('type', 'image')->orderBy('id', 'desc')->get();
 
         return view('partials.image-gallery', ['files' => $files])->render();
     }

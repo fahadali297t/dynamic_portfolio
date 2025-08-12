@@ -10,7 +10,7 @@
 
 
     <!-- service 1 -->
-    <x-frontend.services />
+    <x-frontend.services :services="$services" />
 
     <!-- projects 1 -->
     <x-frontend.projects />
