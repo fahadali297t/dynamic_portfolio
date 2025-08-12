@@ -27,3 +27,23 @@ const displayVideo = (path) => {
     document.getElementById("img_src").classList.add("d-none");
     toggleImage();
 };
+
+function fetchImageGallery() {
+    fetch(`/admin/images`)
+        .then((response) => response.text()) // Blade returns HTML, so use .text()
+        .then((html) => {
+            document.getElementById("imageModal").innerHTML = html;
+            // document.getElementById("imageModal").classList.toggle("d-none");
+        })
+        .catch((error) => console.error("Error loading preview:", error));
+}
+
+const toggleImageGallery = () => {
+    document.getElementById("imageModal").classList.toggle("d-none");
+};
+
+function selectImage(imageUrl) {
+    fetchImageGallery();
+    document.getElementById("selectedImagePreview").src = imageUrl;
+    bootstrap.Modal.getInstance(document.getElementById("imageModal")).hide();
+}

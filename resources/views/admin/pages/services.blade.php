@@ -2,15 +2,15 @@
 
 
 @section('content')
-    <x-breadcrumb parent="Dashboard" child="Testimonials" />
+    <x-breadcrumb parent="Dashboard" child="Services" />
 
 
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Available Testimonials</h5>
-                <a href="{{ route('testimonial.new') }}" class="btn btn-main">
-                    Add New Testimonials
+                <h5 class="mb-0">Available Services</h5>
+                <a href="{{ route('service.new') }}" class="btn btn-main">
+                    Add New Service
                 </a>
 
             </div>
@@ -19,17 +19,19 @@
                     <thead class="table-secondary">
                         <tr>
                             <th>#</th>
+                            <th>Image</th>
                             <th>Name</th>
-                            <th>Rating</th>
-                            <th>Review</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        @php
+                            $i = 0;
+                        @endphp
                         @forelse ($data as $item)
                             <tr>
-                                <td>1</td>
+                                <td>{++$i}</td>
                                 <td>
                                     <div class="d-flex align-items-center gap-3 cursor-pointer">
                                         <img src="{{ asset('storage/photos/' . $item->image) }}" class="rounded-circle"
@@ -83,7 +85,7 @@
 
                             <tr>
                                 <td colspan="5" class="text-center">
-                                    No Testimonial Found
+                                    Please Add some Services
                                 </td>
                             </tr>
                         @endforelse
