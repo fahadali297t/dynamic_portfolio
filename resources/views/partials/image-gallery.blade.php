@@ -10,7 +10,7 @@
                  @forelse ($files as $file)
                      <div class="col-6 col-md-4 col-lg-3">
                          <div class="card h-100 shadow-sm image-card"
-                             onclick="selectImage('{{ asset($file->public_path) }}')">
+                             onclick="selectImage('{{ asset($file->public_path) }}' , {{ $file->id }})">
                              <img src="{{ asset($file->public_path) }}" class="card-img-top img-fluid gallery-img"
                                  alt="Image">
                          </div>

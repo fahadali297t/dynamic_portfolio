@@ -6,14 +6,16 @@ use App\Models\Services;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class ServicesController extends Controller
 {
     public function getServicesPage()
     {
         $services = new Services();
-        $data = $services::get();
+        $data = Services::with('file_manager')->get();
         return view('admin.pages.services', ['data' => $data]);
+        // return $data;
     }
 
     public function getAddServicePage()
@@ -25,29 +27,26 @@ class ServicesController extends Controller
     public function addService(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'position' => 'required',
-            'rating' => 'required',
-            'review' => 'required',
-            'image' => 'required|max:2048'
+            'name' => 'required|unique:services,name',
+            'short_description' => 'required|string|max:255',
+            'description' => 'required',
+            'image_id' => 'required',
         ]);
 
 
 
         if ($data) {
+            Services::create([
+                'name' => $data['name'],
+                'status' => 'Published',
+                'short_description' => $data['short_description'],
+                'description' => $data['description'],
+                'file_manager_id' => $data['image_id'],
 
-            if ($request->hasFile('image')) {
-                $fileName = time() . '_' . uniqid() . '.' . $request->file('image')->getClientOriginalExtension();
-                $request->file('image')->storeAs('photos', $fileName, 'public');
-                $data['image'] = $fileName;
-                $testimonial = new Testimonial();
-                $testimonial::create($data);
-                return redirect()->route('testimonial.list');
-            } else {
-                return redirect()->route('testimonial.new');
-            }
+            ]);
+            return redirect()->route('services.list')->with('success', 'Service Added Successfully');
         } else {
-            return redirect()->route('testimonial.new');
+            return redirect()->route('service.new');
         }
     }
 
@@ -55,27 +54,27 @@ class ServicesController extends Controller
 
     public function  delService(Request $request)
     {
-
-        if ($request->img && Storage::disk('public')->exists($request->img)) {
-            Storage::disk('public')->delete($request->img);
-            Testimonial::findorfail($request->id)->delete();
-            return redirect()->route('testimonial.list')->with('success', 'Testimonial Deleted');
+        $id =  $request->id;
+        $service = Services::findorfail($id);
+        if ($service) {
+            $service->delete();
+            return redirect()->route('services.list')->with('success', 'Service Deleted Successfully');
         } else {
-            return redirect()->route('testimonial.list')->with('error', 'Something went Wrong');
+            return redirect()->route('services.list')->with('error', 'We are facing issue deleting this Service');
         }
     }
 
 
     // Get Update page
 
-    public function getUpdateService(Request $request)
+    public function editService(Request $request)
     {
-        $data = Testimonial::findorfail($request->id);
+        $data = Services::with('file_manager')->findorfail($request->id);
 
         if ($data) {
-            return view('admin.pages.edit_testimonials', ['data' => $data]);
+            return view('admin.pages.edit_service', ['data' => $data]);
         } else {
-            return redirect()->route('testimonial.list')->with('error', 'Review Not Found');
+            return redirect()->route('services.list')->with('error', 'Service Not Found');
         }
     }
 
@@ -84,39 +83,25 @@ class ServicesController extends Controller
     public function UpdateService(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'position' => 'required',
-            'rating' => 'required',
-            'review' => 'required',
-            'image' => 'required|max:2048'
+            'name' => ['required', Rule::unique('services', 'name')->ignore($request->id)],
+            'short_description' => 'required|string|max:255',
+            'description' => 'required',
+            'image_id' => 'required',
         ]);
 
 
 
         if ($data) {
+            $service = Services::findorfail($request->id);
+            $service->name = $request->name;
+            $service->short_description = $request->short_description;
+            $service->description = $request->description;
+            $service->file_manager_id = $request->image_id;
+            $service->save();
 
-            if ($request->hasFile('image')) {
-
-                Storage::disk('public')->delete($request->old_image);
-
-                $fileName = time() . '_' . uniqid() . '.' . $request->file('image')->getClientOriginalExtension();
-                $request->file('image')->storeAs('photos', $fileName, 'public');
-                $data['image'] = $fileName;
-
-                $testimonial = Testimonial::findorfail($request->id);
-                $testimonial->name = $data['name'];
-                $testimonial->position = $data['position'];
-                $testimonial->rating = $data['rating'];
-                $testimonial->review = $data['review'];
-                $testimonial->image = $data['image'];
-                $testimonial->save();
-
-                return redirect()->route('testimonial.list');
-            } else {
-                return redirect()->route('testimonial.list');
-            }
+            return redirect()->route('services.list')->with('success', 'Service updated successfully');
         } else {
-            return redirect()->route('testimonial.list');
+            return redirect()->route('service.new');
         }
     }
 }

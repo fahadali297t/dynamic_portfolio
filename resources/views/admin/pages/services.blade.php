@@ -3,6 +3,12 @@
 
 @section('content')
     <x-breadcrumb parent="Dashboard" child="Services" />
+    @if (session('success'))
+        <x-success :msg="session('success')" />
+    @endif
+    @if (session('error'))
+        <x-error :msg="session('error')" />
+    @endif
 
 
     <div class="card">
@@ -21,6 +27,7 @@
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Short Description</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -31,20 +38,27 @@
                         @endphp
                         @forelse ($data as $item)
                             <tr>
-                                <td>{++$i}</td>
+                                <td>
+                                    @php
+                                        echo ++$i;
+                                    @endphp
+
+                                </td>
                                 <td>
                                     <div class="d-flex align-items-center gap-3 cursor-pointer">
-                                        <img src="{{ asset('storage/photos/' . $item->image) }}" class="rounded-circle"
-                                            width="44" height="44" alt="">
-                                        <div class="">
-                                            <p class="mb-0">{{ $item->name }}</p>
-                                        </div>
+                                        <img src="{{ asset($item->file_manager->public_path) }}" class="rounded-lg"
+                                            width="100" height="50" alt="">
+
                                     </div>
                                 </td>
                                 <td>
-                                    <x-rating :rat="$item->rating" />
+                                    <div class="">
+                                        <p class="mb-0">{{ $item->name }}</p>
+                                    </div>
                                 </td>
-                                <td>{{ Str::words($item->review, 6, '...') }}</td>
+
+                                <td>{{ Str::words($item->short_description, 6, '...') }}</td>
+                                <td>{{ $item->status }}</td>
 
                                 <td>
                                     <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -53,7 +67,7 @@
                                         </a>
 
                                         {{-- for edit --}}
-                                        <form action="{{ route('testimonial.edit') }}" method="GET">
+                                        <form action="{{ route('service.edit') }}" method="GET">
 
 
                                             <input type="hidden" name="id" value="{{ $item->id }}">
@@ -65,10 +79,9 @@
                                             </a>
                                         </form>
                                         {{-- for delete --}}
-                                        <form action="{{ route('testimonial.del') }}" method="POST">
+                                        <form action="{{ route('service.del') }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <input type="hidden" name="img" value="/photos/{{ $item->image }}">
                                             <input type="hidden" name="id" value="{{ $item->id }}">
                                             <a class="text-danger cursor-pointer" data-bs-toggle="tooltip"
                                                 data-bs-placement="bottom" title="Delete"

@@ -35,10 +35,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/services', [ServicesController::class, 'getServicesPage'])->name('services.list');
     Route::get('/new-service', [ServicesController::class, 'getAddServicePage'])->name('service.new');
-    Route::post('/add-service', [ServicesController::class, 'service'])->name('service.add');
-    Route::delete('/del-service', [ServicesController::class, 'service'])->name('service.del');
-    Route::get('/edit-service', [ServicesController::class, 'service'])->name('service.edit');
-    Route::post('/update-service', [ServicesController::class, 'service'])->name('service.update');
+    Route::post('/add-service', [ServicesController::class, 'addService'])->name('service.add');
+    Route::delete('/del-service', [ServicesController::class, 'delService'])->name('service.del');
+    Route::get('/edit-service', [ServicesController::class, 'editService'])->name('service.edit');
+    Route::post('/update-service', [ServicesController::class, 'updateService'])->name('service.update');
 
 
     // For File Manager

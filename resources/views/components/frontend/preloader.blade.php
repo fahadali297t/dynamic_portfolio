@@ -1,0 +1,7 @@
+ <div id="preloader">
+     <div class="loader-cover">
+         <div class="loader-container">
+             <div class="loader-icon"></div>
+         </div>
+     </div>
+ </div>

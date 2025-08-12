@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", async function () {
+    await fetchImageGallery();
+});
+
 const form = document.getElementById("uploadFileForm");
 const inputField = document.getElementById("files");
 
@@ -42,8 +46,9 @@ const toggleImageGallery = () => {
     document.getElementById("imageModal").classList.toggle("d-none");
 };
 
-function selectImage(imageUrl) {
-    fetchImageGallery();
+function selectImage(imageUrl, id) {
     document.getElementById("selectedImagePreview").src = imageUrl;
+    document.getElementById("image_id").value = id;
+
     bootstrap.Modal.getInstance(document.getElementById("imageModal")).hide();
 }

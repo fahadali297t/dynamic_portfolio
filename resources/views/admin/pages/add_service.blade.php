@@ -3,8 +3,6 @@
 
 @section('content')
     <x-breadcrumb parent="Services" child="Add New" />
-    <button onclick="fetchImageGallery()"> Khul ja sim sim</button>
-
     <x-imagesgallery />
     <form action="{{ route('service.add') }}" enctype="multipart/form-data" method="POST">
         @csrf
@@ -16,8 +14,8 @@
 
                         <div>
                             <label for="name" class="form-label">Name of Service*:</label>
-                            <input id="name" name="name" class="form-control mb-3" type="text"
-                                placeholder="Enter Name of Service" aria-label="default input example">
+                            <input id="name" value="{{ old('name') }}" name="name" class="form-control mb-3"
+                                type="text" placeholder="Enter Name of Service" aria-label="default input example">
                             @error('name')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
                             @enderror
@@ -27,7 +25,7 @@
                             <label for="short_description" class="form-label">Short Description:</label>
 
                             <textarea name="short_description" id="short_description" class="form-control" rows="3"
-                                aria-label="With textarea"></textarea>
+                                aria-label="With textarea">{{ old('short_description') }}</textarea>
                             @error('short_description')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
                             @enderror
@@ -36,7 +34,7 @@
                         <div>
                             <label for="description" class="form-label">Description*:</label>
 
-                            <textarea name="description" id="description" class="form-control" rows="10" aria-label="With textarea"></textarea>
+                            <textarea name="description" id="description" class="form-control" rows="10" aria-label="With textarea">{{ old('description') }}</textarea>
                             @error('description')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
                             @enderror
@@ -46,8 +44,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="d-flex justify-content-center align-items-center">
-                    <label for="image_upload">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    {{-- <label for="image_upload">
                         <div class="upload_image_container upload_image_container_landscape">
                             <div class="overlay_image_upload">
                                 <i class="bi bi-card-image "></i>
@@ -60,10 +58,18 @@
                         </div>
                         <p class="mt-2 ms-2" style="font-size: 12px">*Main Picture (Must Be Landscape)</p>
 
-                    </label>
-                    <input class='d-none' id="image_upload" name="image" type="file" accept="image/*">
+                    </label> --}}
+                    <input type="hidden" name="image_id" id="image_id">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        Select Image
+                    </button>
+                    <div class="mt-3 text-center">
+                        <h6>Please Select Image :</h6>
+                        <img id="selectedImagePreview" src="" class="img-thumbnail mb-3" style="max-width: 300px;">
+                    </div>
+
                 </div>
-                @error('image')
+                @error('image_id')
                     <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
                 @enderror
                 <div class="d-flex justify-content-center align-items-center">
