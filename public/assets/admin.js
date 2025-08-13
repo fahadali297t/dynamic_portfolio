@@ -52,3 +52,4 @@ function selectImage(imageUrl, id) {
 
     bootstrap.Modal.getInstance(document.getElementById("imageModal")).hide();
 }
+

@@ -9,6 +9,15 @@
         <x-error :msg="session('error')" />
     @endif
 
+    <x-imagesgallery />
+    <x-frontend.skill-form />
 
-    <h1>Hello</h1>
+
+
+    <div class="row">
+        {{-- skills --}}
+        <x-skills-crud />
+        {{-- for resume --}}
+        <x-resume-crud />
+    </div><!--end row-->
 @endsection

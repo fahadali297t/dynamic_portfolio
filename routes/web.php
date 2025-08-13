@@ -6,6 +6,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
@@ -79,6 +80,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/del-experience', [ExperienceController::class, 'del'])->name('exp.del');
     Route::get('/edit-experience', [ExperienceController::class, 'edit'])->name('exp.edit');
     Route::post('/update-experience', [ExperienceController::class, 'update'])->name('exp.update');
+
+    // for skills
+
+    Route::get('/Skills', [SkillController::class, 'list'])->name('skill.list');
+    Route::get('/new-Skills', [SkillController::class, 'new'])->name('skill.new');
+    Route::post('/add-Skills', [SkillController::class, 'add'])->name('skill.add');
+    Route::delete('/del-Skills', [SkillController::class, 'del'])->name('skill.del');
+    Route::get('/edit-Skills', [SkillController::class, 'edit'])->name('skill.edit');
+    Route::post('/update-Skills', [SkillController::class, 'update'])->name('skill.update');
 
     // For File Manager
     Route::get('/file-manager', [FileManagerController::class, 'view'])->name('file.view');

@@ -57,7 +57,13 @@
                  <div class="menu-title">Experience</div>
              </a>
          </li>
-
+         <li>
+             <a href="{{ route('skill.list') }}">
+                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 </div>
+                 <div class="menu-title">Skills</div>
+             </a>
+         </li>
          <li>
              <a href="{{ route('file.view') }}">
                  <div class="parent-icon"><i class="bi bi-grid-fill"></i>
