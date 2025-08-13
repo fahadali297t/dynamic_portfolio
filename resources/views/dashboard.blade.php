@@ -16,7 +16,7 @@
 
     <div class="row">
         {{-- skills --}}
-        <x-skills-crud />
+        <x-skills-crud :skills="$skills" />
         {{-- for resume --}}
         <x-resume-crud />
     </div><!--end row-->

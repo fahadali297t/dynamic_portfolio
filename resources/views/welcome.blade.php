@@ -17,10 +17,10 @@
 
 
     <!-- resume 1 -->
-    <x-frontend.resume :edus="$educations" :exps="$experiences"/>
+    <x-frontend.resume :edus="$educations" :exps="$experiences" />
 
     <!-- Skills 1 -->
-    <x-frontend.skills />
+    <x-frontend.skills :skills="$skills" />
 
     <!-- brands 1 -->
     <x-frontend.brands />

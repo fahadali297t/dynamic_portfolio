@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Services;
+use App\Models\Skill;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -16,15 +17,19 @@ class UserController extends Controller
         $work = Work::with(['services', 'file_manager'])->get();
         $educations = Education::get();
         $experiences = Experience::get();
+        $skills = Skill::paginate(7);
         return view(
             'welcome',
             [
                 'services' => $services,
                 'works' => $work,
                 'educations' => $educations,
-                'experiences' => $experiences
+                'experiences' => $experiences,
+                'skills' => $skills
             ]
         );
+
+
         // return $services;
     }
 

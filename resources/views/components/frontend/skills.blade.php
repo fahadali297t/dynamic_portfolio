@@ -10,76 +10,98 @@
                  </span>
              </div>
              <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center gap-3 mb-7 px-6">
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-1.png" alt="zelio" />
+                 @forelse ($skills as $skill)
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="{{ asset($skill->file_manager->public_path) }}" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="98"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Figma</p>
+                         </div>
                      </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="98"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Figma</p>
+                 @empty
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-1.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="98"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Figma</p>
+                         </div>
                      </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-2.png" alt="zelio" />
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-2.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="82"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Adobe XD</p>
+                         </div>
                      </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="82"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Adobe XD</p>
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-3.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="76"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Illustrator</p>
+                         </div>
                      </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-3.png" alt="zelio" />
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-4.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="58"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Sketch</p>
+                         </div>
                      </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="76"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Illustrator</p>
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-5.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="60"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Photoshop</p>
+                         </div>
                      </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-4.png" alt="zelio" />
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-6.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="72"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Webflow</p>
+                         </div>
                      </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="58"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Sketch</p>
+                     <div class="skills">
+                         <div class="skills-icon mb-5">
+                             <img src="assets/imgs/skills/skills-1/icon-7.png" alt="zelio" />
+                         </div>
+                         <div class="skills-ratio text-center">
+                             <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
+                                     data-count="93"></span>%
+                             </h3>
+                             <p class="text-400 fw-medium text-uppercase">Framer</p>
+                         </div>
                      </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-5.png" alt="zelio" />
-                     </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="60"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Photoshop</p>
-                     </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-6.png" alt="zelio" />
-                     </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="72"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Webflow</p>
-                     </div>
-                 </div>
-                 <div class="skills">
-                     <div class="skills-icon mb-5">
-                         <img src="assets/imgs/skills/skills-1/icon-7.png" alt="zelio" />
-                     </div>
-                     <div class="skills-ratio text-center">
-                         <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold" data-count="93"></span>%
-                         </h3>
-                         <p class="text-400 fw-medium text-uppercase">Framer</p>
-                     </div>
-                 </div>
+                 @endforelse
+
              </div>
              <div class="text-center">
                  <p class="fs-5 text-200 mb-0">In addition, I have some programming knowledge such as:</p>
