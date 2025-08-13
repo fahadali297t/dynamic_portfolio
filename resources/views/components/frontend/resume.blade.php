@@ -31,11 +31,12 @@
                                 <div class="d-flex align-items-end">
                                     <div class="">
                                         <p class="fw-extra-bold text-linear-1 mb-2">
-                                            {{ \Carbon\Carbon::parse($edu->start)->format('Y') }} - {{ \Carbon\Carbon::parse($edu->end)->format('Y') }}</p>
+                                            {{ \Carbon\Carbon::parse($edu->start)->format('Y') }} -
+                                            {{ \Carbon\Carbon::parse($edu->end)->format('Y') }}</p>
                                         <h5 class="">{{ $edu->name }}</h5>
                                         <p class="text-300 mb-0">{{ $edu->institute }}</p>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         @empty
@@ -53,26 +54,18 @@
                         <h3 class="fw-semibold mb-0 border-bottom border-600 border-3 pb-2 w-100">Experience</h3>
                     </div>
                     <div class="resume-card-body">
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <p class="fw-extra-bold text-linear-1 mb-2">2019 - Present</p>
-                            <h5 class="">Senior UI/UX Designer</h5>
-                            <p class="text-300 mb-0">Leader in Creative team</p>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <p class="fw-extra-bold text-linear-1 mb-2">2016 - 2019</p>
-                            <h5 class="">UI/UX Designer at BOS Agency</h5>
-                            <p class="text-300 mb-0">Tech Startup</p>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <p class="fw-extra-bold text-linear-1 mb-2">2014-2016</p>
-                            <h5 class="">Freelance UI/UX Designer</h5>
-                            <p class="text-300 mb-0">Self-Employed</p>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-4">
-                            <p class="fw-extra-bold text-linear-1 mb-2">2012 - 2014</p>
-                            <h5 class="">Junior UI Designer</h5>
-                            <p class="text-300 mb-0">Web Solutions team</p>
-                        </div>
+                        @forelse ($exps as $item)
+                            <div class="resume-card-item px-4 py-3 mt-5">
+                                <p class="fw-extra-bold text-linear-1 mb-2">
+                                    {{ \Carbon\Carbon::parse($item->start)->format('Y') }} -
+                                    {{ \Carbon\Carbon::parse($item->end)->format('Y') }}</p>
+                                <h5 class="">{{ $item->name }}</h5>
+                                <p class="text-300 mb-0">{{ $item->company }}</p>
+                            </div>
+                        @empty
+                        @endforelse
+
+
                     </div>
                 </div>
             </div>

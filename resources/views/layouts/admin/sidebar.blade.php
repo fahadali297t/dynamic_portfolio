@@ -43,6 +43,20 @@
                  <div class="menu-title">Projects</div>
              </a>
          </li>
+         <li>
+             <a href="{{ route('edu.list') }}">
+                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 </div>
+                 <div class="menu-title">Education</div>
+             </a>
+         </li>
+         <li>
+             <a href="{{ route('exp.list') }}">
+                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 </div>
+                 <div class="menu-title">Experience</div>
+             </a>
+         </li>
 
          <li>
              <a href="{{ route('file.view') }}">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
@@ -70,6 +71,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/del-education', [EducationController::class, 'del'])->name('edu.del');
     Route::get('/edit-education', [EducationController::class, 'edit'])->name('edu.edit');
     Route::post('/update-education', [EducationController::class, 'update'])->name('edu.update');
+
+    // For Experience
+    Route::get('/experience', [ExperienceController::class, 'list'])->name('exp.list');
+    Route::get('/new-experience', [ExperienceController::class, 'new'])->name('exp.new');
+    Route::post('/add-experience', [ExperienceController::class, 'add'])->name('exp.add');
+    Route::delete('/del-experience', [ExperienceController::class, 'del'])->name('exp.del');
+    Route::get('/edit-experience', [ExperienceController::class, 'edit'])->name('exp.edit');
+    Route::post('/update-experience', [ExperienceController::class, 'update'])->name('exp.update');
 
     // For File Manager
     Route::get('/file-manager', [FileManagerController::class, 'view'])->name('file.view');

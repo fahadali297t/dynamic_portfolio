@@ -17,7 +17,7 @@
 
 
     <!-- resume 1 -->
-    <x-frontend.resume :edus="$educations" />
+    <x-frontend.resume :edus="$educations" :exps="$experiences"/>
 
     <!-- Skills 1 -->
     <x-frontend.skills />
