@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
 use App\Models\Services;
 use App\Models\Work;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class UserController extends Controller
     {
         $services = Services::with('file_manager')->orderBy('id', 'desc')->get();
         $work = Work::with(['services', 'file_manager'])->get();
-        return view('welcome', ['services' => $services, 'works' => $work]);
+        $educations = Education::get();
+        return view('welcome', ['services' => $services, 'works' => $work, 'educations' => $educations]);
         // return $services;
     }
 

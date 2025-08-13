@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
@@ -62,6 +63,13 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/edit-project', [WorkController::class, 'editWork'])->name('work.edit');
     Route::post('/update-project', [WorkController::class, 'updateWork'])->name('work.update');
 
+    // For Education
+    Route::get('/education', [EducationController::class, 'list'])->name('edu.list');
+    Route::get('/new-education', [EducationController::class, 'new'])->name('edu.new');
+    Route::post('/add-education', [EducationController::class, 'add'])->name('edu.add');
+    Route::delete('/del-education', [EducationController::class, 'del'])->name('edu.del');
+    Route::get('/edit-education', [EducationController::class, 'edit'])->name('edu.edit');
+    Route::post('/update-education', [EducationController::class, 'update'])->name('edu.update');
 
     // For File Manager
     Route::get('/file-manager', [FileManagerController::class, 'view'])->name('file.view');

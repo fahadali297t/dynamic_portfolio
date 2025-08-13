@@ -26,50 +26,22 @@
                         <h3 class="fw-semibold mb-0 border-bottom border-600 border-3 pb-2 w-100">Education</h3>
                     </div>
                     <div class="resume-card-body">
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <div class="d-flex align-items-end">
-                                <div class="">
-                                    <p class="fw-extra-bold text-linear-1 mb-2">2018-2019</p>
-                                    <h5 class="">Certification in UX Design</h5>
-                                    <p class="text-300 mb-0">University of Stanford</p>
+                        @forelse ($edus as $edu)
+                            <div class="resume-card-item px-4 py-3 mt-5">
+                                <div class="d-flex align-items-end">
+                                    <div class="">
+                                        <p class="fw-extra-bold text-linear-1 mb-2">
+                                            {{ \Carbon\Carbon::parse($edu->start)->format('Y') }} - {{ \Carbon\Carbon::parse($edu->end)->format('Y') }}</p>
+                                        <h5 class="">{{ $edu->name }}</h5>
+                                        <p class="text-300 mb-0">{{ $edu->institute }}</p>
+                                    </div>
+                                   
                                 </div>
-                                <h3 class="text-linear-1 ms-auto fw-semibold">4.9<span class="fs-4 fw-bold">/5</span>
-                                </h3>
                             </div>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <div class="d-flex align-items-end">
-                                <div class="">
-                                    <p class="fw-extra-bold text-linear-1 mb-2">2017-2018</p>
-                                    <h5 class="">Certification in Web Dev</h5>
-                                    <p class="text-300 mb-0">University of Stanford</p>
-                                </div>
-                                <h3 class="text-linear-1 ms-auto fw-semibold">5.0<span class="fs-4 fw-bold">/5</span>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <div class="d-flex align-items-end">
-                                <div class="">
-                                    <p class="fw-extra-bold text-linear-1 mb-2">2014-2016</p>
-                                    <h5 class="">Advanced UX/UI Bootcamp</h5>
-                                    <p class="text-300 mb-0">Design Academy</p>
-                                </div>
-                                <h3 class="text-linear-1 ms-auto fw-semibold">4.9<span class="fs-4 fw-bold">/5</span>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="resume-card-item px-4 py-3 mt-5">
-                            <div class="d-flex align-items-end">
-                                <div class="">
-                                    <p class="fw-extra-bold text-linear-1 mb-2">2012-2013</p>
-                                    <h5 class="">Certification in Graphic Design</h5>
-                                    <p class="text-300 mb-0">Coursera</p>
-                                </div>
-                                <h3 class="text-linear-1 ms-auto fw-semibold">4.8<span class="fs-4 fw-bold">/5</span>
-                                </h3>
-                            </div>
-                        </div>
+                        @empty
+                        @endforelse
+
+
                     </div>
                 </div>
             </div>
