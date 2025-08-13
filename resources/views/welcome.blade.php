@@ -13,7 +13,7 @@
     <x-frontend.services :services="$services" />
 
     <!-- projects 1 -->
-    <x-frontend.projects />
+    <x-frontend.projects :works="$works" :services="$services" />
 
 
     <!-- resume 1 -->

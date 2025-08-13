@@ -6,27 +6,22 @@
           </a>
           <div class="container py-3 px-0">
               <a class="navbar-brand d-flex main-logo align-items-center ms-lg-0 ms-md-5 ms-3" href="index.html">
-                  <img src="assets/imgs/template/favicon.svg" alt="zelio" />
+                  <img src="{{ asset('assets/imgs/template/favicon.svg') }}" alt="zelio" />
                   <span class="fs-4 ms-2">william.design</span>
               </a>
               <div class="d-none d-lg-flex">
                   <div class="main-menu">
                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                           <li class="nav-item has-children">
-                              <a class="nav-link active" href="#">Home</a>
-                              <ul class="sub-menu">
-                                  <li><a href="index.html">Landing page</a></li>
-                                  <li><a href="index-1.html">Home 1 - Designer</a></li>
-                                  <li><a href="index-2.html">Home 2 - Developer</a></li>
-                                  <li><a href="index-3.html">Home 3 - Author</a></li>
-                              </ul>
+                              <a class="nav-link active" href="{{ route('home') }}">Home</a>
+
                           </li>
 
                           <li class="nav-item">
-                              <a class="nav-link" href="services.html">Services</a>
+                              <a class="nav-link" href="{{ route('user.services') }}">Services</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="work.html">Portfolio</a>
+                              <a class="nav-link" href="{{ route('user.projects') }}">Portfolio</a>
                           </li>
 
                           <li class="nav-item  has-children">
@@ -130,7 +125,7 @@
           <div class="mobile-header-wrapper-inner">
               <div class="mobile-header-logo">
                   <a class="d-flex main-logo align-items-center d-inline-flex" href="index.html">
-                      <img src="assets/imgs/footer-1/logo.svg" alt="zelio" />
+                      <img src="{{ asset('assets/imgs/footer-1/logo.svg') }}" alt="zelio" />
                       <span class="fs-4 ms-2 text-dark">william.design</span>
                   </a>
                   <div class="burger-icon burger-icon-white border rounded-3">

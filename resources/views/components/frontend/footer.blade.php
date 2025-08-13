@@ -3,7 +3,7 @@
             <div class="container position-relative z-1">
                 <div class="text-center">
                     <a class="d-flex main-logo align-items-center d-inline-flex" href="index.html">
-                        <img src="assets/imgs/footer-1/logo.svg" alt="zelio" />
+                        <img src="{{ asset('assets/imgs/footer-1/logo.svg') }}" alt="zelio" />
                         <span class="fs-4 ms-2 text-white-keep">william.design</span>
                     </a>
                     <div
@@ -34,6 +34,6 @@
                 </div>
             </div>
             <div class="position-absolute top-0 start-0 w-100 h-100 z-0"
-                data-background="assets/imgs/footer-1/background.png "></div>
+                data-background="{{ asset('assets/imgs/footer-1/background.png ') }}"></div>
         </div>
     </footer>

@@ -26,7 +26,7 @@
                         data-img="{{ asset($service->file_manager->public_path) }}">
                         <div class="service-card-details d-lg-flex align-items-center">
                             <h3 class="service-card-title w-lg-50 w-100 mb-0">
-                                <a href="work-single.html">
+                                <a href="{{ route('user.services.view', ['id' => $service->id]) }}">
                                     <span class="service-number">
                                         @php
                                             if ($i < 10) {
@@ -39,7 +39,7 @@
                                     {{ $service->name }}
                                 </a>
                             </h3>
-                            <a href="#"
+                            <a href="{{ route('user.services.view', ['id' => $service->id]) }}"
                                 class="d-md-flex d-block ps-lg-10 align-items-center justify-content-end w-100">
                                 <p class="service-card-text my-3">
                                     {{ $service->short_description }}

@@ -24,84 +24,40 @@
              <div class="button-group filter-button-group filter-menu-active">
                  <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase active" data-filter="*">All
                      Projects</button>
-                 <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase " data-filter=".brand">Branding</button>
-                 <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase " data-filter=".webdesign">Web
-                     Design</button>
-                 <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase " data-filter=".ui">UI/UX</button>
-                 <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase " data-filter=".app">App
-                     Dev</button>
+
+                 @forelse ($services as $service)
+                     <button class="btn btn-md btn-filter mb-2 me-2 text-uppercase "
+                         data-filter=".fil-{{ $service->id }}">{{ $service->name }}</button>
+                 @empty
+                 @endforelse
+
              </div>
          </div>
          <div class="row masonry-active justify-content-between mt-6">
              <div class="grid-sizer"></div>
-             <div class="filter-item col-lg-6 col-12 brand ui app">
-                 <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                     <a href="work-single.html">
-                         <img class="rounded-3 w-100 zoom-img" src="assets/imgs/projects/projects-1/img-1.png"
-                             alt="zelio" />
-                     </a>
-                     <div class="d-flex align-items-center mt-4">
-                         <a href="work-single.html" class="project-card-content">
-                             <h3 class="fw-semibold">Photo App UI/UX</h3>
-                             <p>Bokeh network</p>
+             @forelse ($works as $work)
+                 <div class="filter-item col-lg-6 col-12 brand fil-{{ $work->services->id }} app">
+                     <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
+                         <a href="work-single.html">
+                             <img class="rounded-3 w-100 zoom-img" src="{{ asset($work->file_manager->public_path) }}"
+                                 alt="zelio" />
                          </a>
-                         <a href="work-single.html" class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
-                             <i class="ri-arrow-right-up-line"></i>
-                         </a>
+                         <div class="d-flex align-items-center mt-4">
+                             <a href="work-single.html" class="project-card-content">
+                                 <h3 class="fw-semibold">{{ $work->title }}</h3>
+                                 <p>{{ $work->client }}</p>
+                             </a>
+                             <a href="work-single.html"
+                                 class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
+                                 <i class="ri-arrow-right-up-line"></i>
+                             </a>
+                         </div>
                      </div>
                  </div>
-             </div>
-             <div class="filter-item col-lg-6 col-12 webdesign brand dataanalysis brand">
-                 <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                     <a href="work-single.html">
-                         <img class="rounded-3 w-100 zoom-img" src="assets/imgs/projects/projects-1/img-2.png"
-                             alt="zelio" />
-                     </a>
-                     <div class="d-flex align-items-center mt-4">
-                         <a href="work-single.html" class="project-card-content">
-                             <h3 class="fw-semibold">Mobile App Design</h3>
-                             <p>Tech Innovators Inc.</p>
-                         </a>
-                         <a href="work-single.html" class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
-                             <i class="ri-arrow-right-up-line"></i>
-                         </a>
-                     </div>
-                 </div>
-             </div>
-             <div class="filter-item col-lg-6 col-12 ui app">
-                 <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                     <a href="work-single.html">
-                         <img class="rounded-3 w-100 zoom-img" src="assets/imgs/projects/projects-1/img-3.png"
-                             alt="zelio" />
-                     </a>
-                     <div class="d-flex align-items-center mt-4">
-                         <a href="work-single.html" class="project-card-content">
-                             <h3 class="fw-semibold">Interaction Design</h3>
-                             <p>HealthTrack Solutions</p>
-                         </a>
-                         <a href="work-single.html" class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
-                             <i class="ri-arrow-right-up-line"></i>
-                         </a>
-                     </div>
-                 </div>
-             </div>
-             <div class="filter-item col-lg-6 col-12 app app dataanalysis brand">
-                 <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                     <a href="work-single.html">
-                         <img class="rounded-3 w-100 zoom-img" src="assets/imgs/projects/projects-1/img-4.png"
-                             alt="zelio" />
-                     </a>
-                     <div class="d-flex align-items-center mt-4">
-                         <a href="work-single.html" class="project-card-content">
-                             <h3 class="fw-semibold">Design Consultation</h3>
-                             <p>Creative Pulse Studios</p>
-                         </a>
-                         <a href="work-single.html" class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
-                             <i class="ri-arrow-right-up-line"></i>
-                         </a>
-                     </div>
-                 </div>
-             </div>
+             @empty
+             @endforelse
+
+
          </div>
      </div>
  </div>

@@ -106,7 +106,7 @@
     </div>
     <div class="scroll-move-right position-absolute bottom-0 start-50 translate-middle-x bg-900 overflow-hidden">
         <div class="wow img-custom-anim-top">
-            <h3 class="stroke fs-280 text-lowercase text-900 mb-0 lh-1">william.design</h3>
+            <h3 class="stroke fs-280 text-lowercase text-900 mb-0 lh-1">Fahad Ali</h3>
         </div>
     </div>
 </section>

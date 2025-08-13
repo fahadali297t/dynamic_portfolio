@@ -36,6 +36,13 @@
                  <div class="menu-title">Services</div>
              </a>
          </li>
+         <li>
+             <a href="{{ route('work.list') }}">
+                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 </div>
+                 <div class="menu-title">Projects</div>
+             </a>
+         </li>
 
          <li>
              <a href="{{ route('file.view') }}">

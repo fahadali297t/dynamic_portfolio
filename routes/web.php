@@ -6,11 +6,25 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkController;
 use App\Models\FileManager;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'viewHome'])->name('home');
+Route::group(['as' => 'user.'], function () {
+    // 
+    Route::get('/services', [UserController::class, 'services'])->name('services');
+    Route::get('/services/{id}', [UserController::class, 'singleService'])->name('services.view');
 
+    Route::get('/projects', [UserController::class, 'projects'])->name('projects');
+    Route::get('/projects/{id}', [UserController::class, 'singleProject'])->name('projects.view');
+
+    // 
+});
+
+
+
+// ===================== for admin  =============================================================
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->prefix('admin')->name('dashboard');
@@ -38,6 +52,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/del-service', [ServicesController::class, 'delService'])->name('service.del');
     Route::get('/edit-service', [ServicesController::class, 'editService'])->name('service.edit');
     Route::post('/update-service', [ServicesController::class, 'updateService'])->name('service.update');
+
+    // For Work
+
+    Route::get('/projects', [WorkController::class, 'getworksPage'])->name('work.list');
+    Route::get('/new-project', [WorkController::class, 'getAddWorkPage'])->name('work.new');
+    Route::post('/add-project', [WorkController::class, 'addWork'])->name('work.add');
+    Route::delete('/del-project', [WorkController::class, 'delWork'])->name('work.del');
+    Route::get('/edit-project', [WorkController::class, 'editWork'])->name('work.edit');
+    Route::post('/update-project', [WorkController::class, 'updateWork'])->name('work.update');
 
 
     // For File Manager
