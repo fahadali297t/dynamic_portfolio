@@ -14,6 +14,8 @@ use App\Models\FileManager;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'viewHome'])->name('home');
+
+Route::view('/test', 'test');
 Route::group(['as' => 'user.'], function () {
     // 
     Route::get('/services', [UserController::class, 'services'])->name('services');
@@ -28,7 +30,7 @@ Route::group(['as' => 'user.'], function () {
 
 
 // ===================== for admin  =============================================================
-Route::get('/dashboard' , [AdminController::class , 'dashboard'])->middleware(['auth', 'verified'])->prefix('admin')->name('dashboard');
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware(['auth', 'verified'])->prefix('admin')->name('dashboard');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -95,6 +97,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     // Ajax route
     Route::get('/images', [FileManagerController::class, 'viewImage']);
+    Route::get('/pdf', [FileManagerController::class, 'viewPdf']);
+    Route::post('/pdf-submit', [UserController::class, 'addResume'])->name('resume.add');
 });
 
 require __DIR__ . '/auth.php';

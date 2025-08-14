@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     await fetchImageGallery();
+    await fetchPdfGallery();
 });
 
 const form = document.getElementById("uploadFileForm");
@@ -42,6 +43,16 @@ function fetchImageGallery() {
         .catch((error) => console.error("Error loading preview:", error));
 }
 
+function fetchPdfGallery() {
+    fetch(`/admin/pdf`)
+        .then((response) => response.text()) // Blade returns HTML, so use .text()
+        .then((html) => {
+            document.getElementById("pdfModal").innerHTML = html;
+            // document.getElementById("imageModal").classList.toggle("d-none");
+        })
+        .catch((error) => console.error("Error loading preview:", error));
+}
+
 const toggleImageGallery = () => {
     document.getElementById("imageModal").classList.toggle("d-none");
 };
@@ -52,4 +63,3 @@ function selectImage(imageUrl, id) {
 
     bootstrap.Modal.getInstance(document.getElementById("imageModal")).hide();
 }
-

@@ -68,3 +68,5 @@
 
 
 @include('layouts.admin.foot')
+
+@yield('scripts')

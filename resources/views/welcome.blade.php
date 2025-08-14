@@ -3,7 +3,7 @@
 <main id="mainContent">
     <!-- prettier-ignore -->
             <!--Home 1 Section 1-->
-    <x-frontend.hero />
+    <x-frontend.hero :resume="$resume" />
 
     <!--Static 1-->
     <x-frontend.stats />
@@ -39,6 +39,18 @@
 <x-frontend.footer />
 <!-- Scroll top -->
 <x-frontend.scroll-top />
+
+<script>
+    function downloadPDF(filename) {
+        const pdfPath = '/' + filename;
+        const link = document.createElement("a");
+        link.href = pdfPath;
+        link.download = "fahadaliresume.pdf"; // optional custom filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
 
 
 <x-frontend.bottom />

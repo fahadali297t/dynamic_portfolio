@@ -20,6 +20,9 @@
  <script src="{{ asset('assets/js/main.js') }}"></script>
  <script src="{{ asset('assets/preloader.js') }}"></script>
 
+
+
+
  </body>
 
  </html>

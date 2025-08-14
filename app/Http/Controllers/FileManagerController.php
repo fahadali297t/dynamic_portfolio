@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FileManager;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -149,5 +150,13 @@ class FileManagerController extends Controller
         $files = FileManager::where('type', 'image')->orderBy('id', 'desc')->get();
 
         return view('partials.image-gallery', ['files' => $files])->render();
+    }
+    // for Pdf File
+    public function viewPdf()
+    {
+        $id = Auth::user()->resume;
+        $files = FileManager::where('ext', 'pdf')->orderBy('id', 'desc')->get();
+
+        return view('partials.pdf-gallery', ['files' => $files, 'id' => $id])->render();
     }
 }
