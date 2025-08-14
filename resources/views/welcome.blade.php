@@ -1,6 +1,6 @@
 <x-frontend.top />
 
-<main>
+<main id="mainContent">
     <!-- prettier-ignore -->
             <!--Home 1 Section 1-->
     <x-frontend.hero />

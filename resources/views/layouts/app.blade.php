@@ -19,9 +19,10 @@
 
 @include('layouts.admin.head')
 
+@include('layouts.preloader')
 
 <!--start wrapper-->
-<div class="wrapper">
+<div class="wrapper" id="mainContent">
     <!--start top header-->
     @include('layouts.admin.top_header')
     <!--end top header-->

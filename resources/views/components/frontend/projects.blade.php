@@ -63,7 +63,7 @@
  </div>
  <div class="contairer overflow-hidden">
      <div class="row justify-content-center position-relative button-project pb-160 bg-900 pt-1">
-         <a href="work.html"
+         <a href="{{ route('user.projects') }}"
              class="icon_hover position-relative z-1 icon-shape icon_150 border-linear-2 rounded-circle position-relative overflow-hidden bg-white hover-up">
              <span class="icon-shape icon-md bg-linear-2 rounded-circle position-absolute bottom-0 end-0"></span>
              <p class="m-0 fs-7 fw-bold text-capitalize position-absolute top-50 start-50 translate-middle">

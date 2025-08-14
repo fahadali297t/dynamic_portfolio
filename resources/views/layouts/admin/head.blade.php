@@ -29,6 +29,8 @@
     <link href="{{ asset('assets/css/header-colors.css') }}" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('assets/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/preloader.css') }}">
+
 
     <title>{{ env('APP_NAME') }}</title>
 </head>

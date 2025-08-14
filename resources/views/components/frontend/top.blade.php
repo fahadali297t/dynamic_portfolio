@@ -27,14 +27,17 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/user.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/preloader.css') }}" />
 
 </head>
 
 <body>
     <!-- prettier-ignore -->
         <!--Preloader-->
-    <x-frontend.preloader />
+    {{-- <x-frontend.preloader /> --}}
     <!--Preloader-end -->
 
     <!-- Navbar -->
     <x-frontend.navbar />
+
+    @include('layouts.preloader')
