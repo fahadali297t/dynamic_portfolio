@@ -11,15 +11,15 @@
              </div>
              <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center gap-3 mb-7 px-6">
                  @forelse ($skills as $skill)
-                     <div class="skills">
+                     <div class="skills d-flex justify-content-center align-items-center flex-column">
                          <div class="skills-icon mb-5">
                              <img src="{{ asset($skill->file_manager->public_path) }}" alt="zelio" />
                          </div>
                          <div class="skills-ratio text-center">
                              <h3 class="count fw-semibold my-0"><span class="odometer fw-semibold"
-                                     data-count="98"></span>%
+                                     data-count="{{ $skill->experty }}"></span>%
                              </h3>
-                             <p class="text-400 fw-medium text-uppercase">Figma</p>
+                             <p class="text-400 fw-medium text-uppercase">{{ $skill->name }}</p>
                          </div>
                      </div>
                  @empty

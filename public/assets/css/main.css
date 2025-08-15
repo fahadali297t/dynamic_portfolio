@@ -4669,7 +4669,7 @@ textarea.form-control {
     padding-bottom: 400px;
 }
 
-@media(min-width:992px){
+@media (min-width: 992px) {
     .section-work
         .card-scroll
         .cards

@@ -1,7 +1,7 @@
  <aside class="sidebar-wrapper" data-simplebar="true">
      <div class="sidebar-header">
          <div>
-             <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+             <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
          </div>
          <div>
              <h4 class="logo-text">Onedash</h4>
@@ -31,35 +31,35 @@
 
          <li>
              <a href="{{ route('services.list') }}">
-                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 <div class="parent-icon"><i class="bi bi-briefcase"></i>
                  </div>
                  <div class="menu-title">Services</div>
              </a>
          </li>
          <li>
              <a href="{{ route('work.list') }}">
-                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 <div class="parent-icon"><i class="bi bi-collection"></i>
                  </div>
                  <div class="menu-title">Projects</div>
              </a>
          </li>
          <li>
              <a href="{{ route('edu.list') }}">
-                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 <div class="parent-icon"><i class="bi bi-pen"></i>
                  </div>
                  <div class="menu-title">Education</div>
              </a>
          </li>
          <li>
              <a href="{{ route('exp.list') }}">
-                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 <div class="parent-icon"><i class="bi bi-hourglass-split"></i>
                  </div>
                  <div class="menu-title">Experience</div>
              </a>
          </li>
          <li>
              <a href="{{ route('skill.list') }}">
-                 <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                 <div class="parent-icon"><i class="bi bi-brush"></i>
                  </div>
                  <div class="menu-title">Skills</div>
              </a>
@@ -68,7 +68,7 @@
              <a href="{{ route('file.view') }}">
                  <div class="parent-icon"><i class="bi bi-grid-fill"></i>
                  </div>
-                 <div class="menu-title">File Manager</div>
+                 <div class="menu-title">Media</div>
              </a>
          </li>
          {{-- ends  --}}

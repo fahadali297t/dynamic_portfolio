@@ -2,10 +2,13 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
+    @php
+        $user = \App\Models\Designer::first();
+    @endphp
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>William - Crafting Intuitive Digital Experiences</title>
+    <title>{{ $user->name }} - Crafting Intuitive Digital Experiences</title>
     <script src="{{ asset('assets/js/vendors/color-modes.js') }}"></script>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/template/favicon-gradient.svg') }}" />
@@ -38,6 +41,9 @@
     <!--Preloader-end -->
 
     <!-- Navbar -->
-    <x-frontend.navbar />
+    @php
+        $user = \App\Models\Designer::first();
+    @endphp
+    <x-frontend.navbar :user="$user" />
 
     @include('layouts.preloader')

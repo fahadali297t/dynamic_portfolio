@@ -10,7 +10,8 @@
                  </span>
              </div>
              <div class="col-lg-auto">
-                 <a href="work.html" class="btn btn-gradient mt-lg-0 mt-5 ms-lg-auto d-none d-xl-block">
+                 <a href="{{ route('user.projects') }}"
+                     class="btn btn-gradient mt-lg-0 mt-5 ms-lg-auto d-none d-xl-block">
                      View All Projects
                      <i class="ri-arrow-right-up-line"></i>
                  </a>
@@ -38,16 +39,17 @@
              @forelse ($works as $work)
                  <div class="filter-item col-lg-6 col-12 brand fil-{{ $work->services->id }} app">
                      <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                         <a href="work-single.html">
+                         <a href="{{ route('user.projects.view', ['id' => $work->id]) }}">
                              <img class="rounded-3 w-100 zoom-img" src="{{ asset($work->file_manager->public_path) }}"
                                  alt="zelio" />
                          </a>
                          <div class="d-flex align-items-center mt-4">
-                             <a href="work-single.html" class="project-card-content">
+                             <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                                 class="project-card-content">
                                  <h3 class="fw-semibold">{{ $work->title }}</h3>
                                  <p>{{ $work->client }}</p>
                              </a>
-                             <a href="work-single.html"
+                             <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
                                  class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
                                  <i class="ri-arrow-right-up-line"></i>
                              </a>

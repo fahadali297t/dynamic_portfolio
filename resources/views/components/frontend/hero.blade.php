@@ -2,7 +2,7 @@
      <div class="container position-relative z-3">
          <div class="row">
              <div class="col-lg-6 col-md-12">
-                 <span class="text-dark">👋 Hi there, I'm William</span>
+                 <span class="text-dark">👋 Hi there, I'm {{ $user->name }}</span>
                  <h1 class="ds-2 mb-3">Crafting Intuitive <span class="text-primary">Digital Experiences</span>
                  </h1>
                  <p class="text-300 mb-6">I assist individuals and brands in achieving their objectives by

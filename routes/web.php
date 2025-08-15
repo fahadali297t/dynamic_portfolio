@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DesignerController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FileManagerController;
@@ -37,7 +38,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
+    Route::post('/dashboard', [DesignerController::class, 'update']);
     // admin routes
     Route::get('/testimonial', [TestimonialController::class, 'getTestimonialPage'])->name('testimonial.list');
     Route::get('/new-testimonial', [TestimonialController::class, 'getAddTestimonialPage'])->name('testimonial.new');

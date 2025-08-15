@@ -43,7 +43,7 @@
 
             <a class="dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                 <div class="user-setting d-flex align-items-center gap-3">
-                    <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="">
+                    <img src="{{ asset('assets/images/avatars/avatar-1.png') }}" class="user-img" alt="">
                     <div class="d-none d-sm-block">
                         <p class="user-name mb-0">{{ Auth::user()->name }}</p>
                         <small class="mb-0 dropdown-user-designation">Designer</small>

@@ -5,9 +5,9 @@
               <i class="ri-menu-2-line"></i>
           </a>
           <div class="container py-3 px-0">
-              <a class="navbar-brand d-flex main-logo align-items-center ms-lg-0 ms-md-5 ms-3" href="index.html">
+              <a class="navbar-brand d-flex main-logo align-items-center ms-lg-0 ms-md-5 ms-3" href="{{ route('home') }}">
                   <img src="{{ asset('assets/imgs/template/favicon.svg') }}" alt="zelio" />
-                  <span class="fs-4 ms-2">william.design</span>
+                  <span class="fs-4 ms-2 text-uppercase">{{ $user->name }}</span>
               </a>
               <div class="d-none d-lg-flex">
                   <div class="main-menu">
@@ -44,17 +44,20 @@
               </div>
               <div class="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
                   <div class="d-md-flex d-none gap-3">
-                      <a href="http://facebook.com">
+                      <a href="{{ $user->facebook }}">
                           <i class="ri-facebook-circle-fill fs-18"></i>
                       </a>
-                      <a href="http://twitter.com">
-                          <i class="ri-twitter-x-fill fs-18"></i>
+                      <a href="{{ $user->instagram }}">
+                          <i class="ri-instagram-line fs-18"></i>
                       </a>
-                      <a href="http://linkedin.com">
+                      <a href="{{ $user->linkedin }}">
                           <i class="ri-linkedin-fill fs-18"></i>
                       </a>
-                      <a href="http://github.com">
-                          <i class="ri-github-fill fs-18"></i>
+                      <a href="{{ $user->dribble }}">
+                          <i class="ri-dribbble-fill fs-18"></i>
+                      </a>
+                      <a href="{{ $user->behance }}">
+                          <i class="ri-behance-fill fs-18"></i>
                       </a>
                   </div>
                   <div class="burger-icon burger-icon-white border rounded-3">
@@ -85,36 +88,39 @@
                       with innovative minds.</p>
                   <div class="mb-3">
                       <span class="text-400 fs-5">Phone Number</span>
-                      <p class="mb-0">+1-234-567-8901</p>
+                      <p class="mb-0">{{ $user->phone_number }}</p>
                   </div>
                   <div class="mb-3">
                       <span class="text-400 fs-5">Email</span>
-                      <p class="mb-0">contact@william.design</p>
+                      <p class="mb-0">{{ $user->email }}</p>
                   </div>
                   <div class="mb-3">
-                      <span class="text-400 fs-5">Skype</span>
-                      <p class="mb-0">WilliamDesignUX</p>
+                      <span class="text-400 fs-5">Linkedin</span>
+                      <p class="mb-0">{{ $user->linkedin }}</p>
                   </div>
                   <div class="mb-3">
                       <span class="text-400 fs-5">Address</span>
-                      <p class="mb-0">0811 Erdman Prairie Road, Joaville, California 90210</p>
+                      <p class="mb-0">{{ $user->address }}</p>
                   </div>
               </div>
 
               <div class="contact-list">
                   <p class="text-400 fs-5 mb-2">Social</p>
                   <div class="d-md-flex d-none gap-3">
-                      <a href="http://facebook.com">
+                      <a href="{{ $user->facebook }}">
                           <i class="ri-facebook-circle-fill fs-18"></i>
                       </a>
-                      <a href="http://twitter.com">
-                          <i class="ri-twitter-x-fill fs-18"></i>
+                      <a href="{{ $user->instagram }}">
+                          <i class="ri-instagram-line fs-18"></i>
                       </a>
-                      <a href="http://linkedin.com">
+                      <a href="{{ $user->linkedin }}">
                           <i class="ri-linkedin-fill fs-18"></i>
                       </a>
-                      <a href="http://github.com">
-                          <i class="ri-github-fill fs-18"></i>
+                      <a href="{{ $user->dribble }}">
+                          <i class="ri-dribbble-fill fs-18"></i>
+                      </a>
+                      <a href="{{ $user->behance }}">
+                          <i class="ri-behance-fill fs-18"></i>
                       </a>
                   </div>
               </div>

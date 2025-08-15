@@ -9,17 +9,17 @@
 <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('assets/js/pace.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/chartjs/js/Chart.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/plugins/chartjs/js/Chart.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/chartjs/js/Chart.extension.js') }}"></script>
-<script src="{{ asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script> --}}
 <!--app-->
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script src="{{ asset('assets/js/index4.js') }}"></script>
 <script src="{{ asset('assets/admin.js') }}"></script>
 <script src="{{ asset('assets/preloader.js') }}"></script>
-<script>
+{{-- <script>
     new PerfectScrollbar(".best-product")
-</script>
+</script> --}}
 
 </body>
 

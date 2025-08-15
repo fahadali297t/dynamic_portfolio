@@ -5,4 +5,14 @@
     min-width: 100%;
 }
 
+@media (min-width: 991px) {
+    .zoom-img {
+        height: 300px;
+    }
+}
 
+@media (min-width: 1200px) {
+    .zoom-img {
+        height: 450px;
+    }
+}

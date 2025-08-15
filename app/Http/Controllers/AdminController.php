@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Designer;
 use App\Models\FileManager;
 use App\Models\Skill;
 use Illuminate\Http\Request;
@@ -12,9 +13,9 @@ class AdminController extends Controller
     public function dashboard()
     {
         $resume_id = Auth::user()->resume;
-        $skills = Skill::with('file_manager')->get();
+        $details = Designer::first();
         $resume = FileManager::where('id', $resume_id)->first();
-        return view('dashboard', ['skills' => $skills, 'resume' => $resume]);
+        return view('dashboard', ['details' => $details, 'resume' => $resume]);
         // return $resume;
     }
 }

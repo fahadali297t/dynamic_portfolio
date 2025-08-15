@@ -129,6 +129,19 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            await fetchImageGallery();
+        });
+
+        function fetchImageGallery() {
+            fetch(`/admin/images?q=add`)
+                .then((response) => response.text()) // Blade returns HTML, so use .text()
+                .then((html) => {
+                    document.getElementById("imageModal").innerHTML = html;
+                    // document.getElementById("imageModal").classList.toggle("d-none");
+                })
+                .catch((error) => console.error("Error loading preview:", error));
+        }
         document.getElementById('image_upload').addEventListener('change', function(event) {
             const file = event.target.files[0];
             const preview = document.getElementById('preview');

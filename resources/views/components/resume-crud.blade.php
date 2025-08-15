@@ -17,7 +17,6 @@
                                          <i class="bi bi-file-earmark-text"></i>
                                          {{ $resume->name }}
                                      </h6>
-                                     <span class="pdf-size">2.4 MB</span>
                                  </div>
                                  <div class="pdf-preview">
                                      <div class="pdf-placeholder">
@@ -69,6 +68,28 @@
 
  <script>
      // View PDF function
+
+
+     document.addEventListener("DOMContentLoaded", async function() {
+         await fetchPdfGallery();
+     });
+
+     function fetchPdfGallery() {
+         fetch(`/admin/pdf`)
+             .then((response) => response.text())
+             .then((html) => {
+                 const modalContainer = document.getElementById("pdfModal");
+                 modalContainer.innerHTML = html;
+
+                 // Re-init the Bootstrap modal instance
+                 const modalEl = modalContainer.querySelector(".modal");
+                 if (modalEl) {
+                     bootstrap.Modal.getOrCreateInstance(modalEl);
+                 }
+             })
+             .catch((error) => console.error("Error loading preview:", error));
+     }
+
      function viewPDF(filename) {
          window.open('/' + filename, "_blank");
      }

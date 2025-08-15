@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Designer;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\FileManager;
@@ -19,7 +20,8 @@ class UserController extends Controller
         $work = Work::with(['services', 'file_manager'])->get();
         $educations = Education::get();
         $experiences = Experience::get();
-        $skills = Skill::paginate(7);
+        $skills = Skill::paginate(6);
+        $user = Designer::first();
         $resume_id = User::first()->resume;
         $resume = '';
         if ($resume_id) {
@@ -33,7 +35,8 @@ class UserController extends Controller
                 'educations' => $educations,
                 'experiences' => $experiences,
                 'skills' => $skills,
-                'resume' => $resume
+                'resume' => $resume,
+                'user' => $user,
             ]
         );
 

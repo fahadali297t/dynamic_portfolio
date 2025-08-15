@@ -145,18 +145,20 @@ class FileManagerController extends Controller
 
 
     // for Images to show 
-    public function viewImage()
+    public function viewImage(Request $request)
     {
+        $q = $request->query('q'); // or $request->get('q')
         $files = FileManager::where('type', 'image')->orderBy('id', 'desc')->get();
 
-        return view('partials.image-gallery', ['files' => $files])->render();
+        return view('partials.image-gallery', ['files' => $files, 'q' => $q])->render();
     }
     // for Pdf File
     public function viewPdf()
     {
+
         $id = Auth::user()->resume;
         $files = FileManager::where('ext', 'pdf')->orderBy('id', 'desc')->get();
 
-        return view('partials.pdf-gallery', ['files' => $files, 'id' => $id])->render();
+        return view('partials.pdf-gallery', ['files' => $files, 'id' => $id,])->render();
     }
 }

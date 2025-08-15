@@ -5,6 +5,8 @@
     <x-breadcrumb parent="Dashboard" child="File Manager" />
     <x-image />
 
+    <x-imagesgallery />
+
     @if (session('success'))
         <x-success :msg="session('success')" />
     @endif
@@ -38,8 +40,10 @@
                                 class="bx bx-folder me-2 text-primary"></i><span>All Files</span></a>
 
 
-                        <a href="javascript:;" class="list-group-item py-1"><i
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            class="list-group-item py-1"><i
                                 class="bi bi-file-earmark-image-fill me-2 text-warning"></i><span>Images</span></a>
+
                         <a href="javascript:;" class="list-group-item py-1"><i
                                 class="bi bi-camera-reels-fill me-2 text-primary"></i><span>Videos</span></a>
                         <a href="javascript:;" class="list-group-item py-1"><i
@@ -109,4 +113,27 @@
 
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            await fetchImageGallery();
+        });
+
+        function fetchImageGallery() {
+            fetch(`/admin/images`)
+                .then((response) => response.text()) // Blade returns HTML, so use .text()
+                .then((html) => {
+                    document.getElementById("imageModal").innerHTML = html;
+                    // document.getElementById("imageModal").classList.toggle("d-none");
+                })
+                .catch((error) => console.error("Error loading preview:", error));
+        }
+    </script>
+
+    <script>
+      
+    </script>
 @endsection

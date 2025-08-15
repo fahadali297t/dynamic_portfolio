@@ -26,8 +26,8 @@
                     <h6>{{ $project->services->name }}</h6>
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
-                    <p class="text-300 mb-0">Website</p>
-                    <h6><a href="{{ $project->link ?? '' }}">preview</a></h6>
+                    <p class="text-300 mb-0">Preview</p>
+                    <h6><a href="{{ $project->link ?? '' }}" target="_blank">Click</a></h6>
                 </div>
             </div>
             <img src="{{ asset($project->file_manager->public_path) }}" alt="zelio" />
