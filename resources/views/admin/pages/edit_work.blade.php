@@ -104,7 +104,7 @@
                     </label> --}}
                     <input type="hidden" name="image_id" value="{{ $data->file_manager->id }}" id="image_id">
                     <input type="hidden" name="id" value="{{ $data->id }}">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <button id="selectImageBtn" type="button" class="btn btn-primary">
                         Select Image
                     </button>
                     <div class="mt-3 text-center">
@@ -125,38 +125,8 @@
             </div>
         </div>
     </form>
+@endsection
 
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            await fetchImageGallery();
-        });
-
-        function fetchImageGallery() {
-            fetch(`/admin/images?q=add`)
-                .then((response) => response.text()) // Blade returns HTML, so use .text()
-                .then((html) => {
-                    document.getElementById("imageModal").innerHTML = html;
-                    // document.getElementById("imageModal").classList.toggle("d-none");
-                })
-                .catch((error) => console.error("Error loading preview:", error));
-        }
-        document.getElementById('image_upload').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const preview = document.getElementById('preview');
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result; // set img src
-                    preview.style.display = 'block'; // make visible
-                };
-                reader.readAsDataURL(file);
-            } else {
-                preview.src = '{{ asset('assets/images/gray-user-profile-icon-png-fP8Q1P.png') }}';
-                // preview.style.display = 'none';
-            }
-        });
-    </script>
+@section('scripts')
+    <script src="{{ asset('assets/fetch.js') }}"></script>
 @endsection
