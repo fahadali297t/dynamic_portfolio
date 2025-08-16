@@ -201,7 +201,9 @@ html.dark-theme .modal-title {
     flex-direction: column;
     margin-bottom: 20px;
 }
-
+.pdf-card-full {
+    width: 100%;
+}
 .pdf-card:hover {
     border-color: #d1d5db;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -717,6 +719,17 @@ html.dark-theme .modal-title {
     }
 }
 
+.ck-editor__editable {
+    min-height: 300px; /* change height */
+    max-height: 600px; /* optional */
+    width: 100%; /* or set fixed width like 800px */
+    color: black !important;
+}
+
+html.dark-theme .ck-editor__editable {
+    background-color: #1a2232 !important; /* Dark background */
+    color: white !important; /* Light text color */
+}
 .btn-media {
     color: black;
     background-color: white;

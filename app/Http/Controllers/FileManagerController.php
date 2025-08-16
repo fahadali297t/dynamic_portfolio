@@ -153,12 +153,18 @@ class FileManagerController extends Controller
         return view('partials.image-gallery', ['files' => $files, 'q' => $q])->render();
     }
     // for Pdf File
-    public function viewPdf()
+    public function viewPdf(Request $request)
     {
 
-        $id = Auth::user()->resume;
+        $q = $request->query('q'); // or $request->get('q')
+        if ($q == 'a') {
+            $id = null;
+        } else {
+            $id = Auth::user()->resume;
+        }
+
         $files = FileManager::where('ext', 'pdf')->orderBy('id', 'desc')->get();
 
-        return view('partials.pdf-gallery', ['files' => $files, 'id' => $id,])->render();
+        return view('partials.pdf-gallery', ['files' => $files, 'id' => $id, 'q' => $q])->render();
     }
 }

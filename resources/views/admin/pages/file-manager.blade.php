@@ -6,16 +6,13 @@
     <x-image />
 
     <x-imagesgallery />
-
+    <x-pdfgallery />
     @if (session('success'))
         <x-success :msg="session('success')" />
     @endif
     @if (session('error'))
         <x-error :msg="session('error')" />
     @endif
-
-
-
     <div class="row">
         <div class="col-12 col-xl-3">
             <div class="card">
@@ -44,9 +41,9 @@
                             class=" d-flex justify-content-start align-items-center btn-media py-1"><i
                                 class="bi bi-file-earmark-image-fill me-2 text-warning"></i><span>Images</span></button>
 
-                        <button type="button" class=" d-flex justify-content-start align-items-center btn-media py-1"><i
-                                class="bi bi-camera-reels-fill me-2 text-primary"></i><span>Videos</span></button>
-                        <button type="button" class=" d-flex justify-content-start align-items-center btn-media py-1"><i
+
+                        <button type="button" id="fetchPdfBtn"
+                            class=" d-flex justify-content-start align-items-center btn-media py-1"><i
                                 class="bi bi-file-earmark-break-fill me-2 text-info"></i><span>Documents</span></button>
 
 
@@ -119,4 +116,5 @@
 
 @section('scripts')
     <script src="{{ asset('assets/fetch.js') }}"></script>
+    <script src="{{ asset('assets/fetchpdf.js') }}"></script>
 @endsection

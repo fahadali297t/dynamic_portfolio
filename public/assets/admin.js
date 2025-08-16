@@ -7,9 +7,6 @@ inputField.addEventListener("change", () => {
     }
 });
 
-const fileContentCard = document.getElementById("file_card_content");
-console.log(fileContentCard);
-
 const toggleImage = () => {
     document.getElementById("image_viewer").classList.toggle("d-none");
 };

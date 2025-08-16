@@ -10,5 +10,5 @@ window.addEventListener("load", function () {
             preloader.style.display = "none";
             mainContent.classList.add("show");
         }, 500);
-    }, 3000); // 3 second delay to show the full loading animation
+    }, 500); // 3 second delay to show the full loading animation
 });

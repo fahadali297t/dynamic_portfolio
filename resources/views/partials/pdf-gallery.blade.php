@@ -22,7 +22,7 @@
                 <!-- PDF Card 1 -->
 
                 @forelse ($files as $file)
-                    <div onclick="selectPdf('{{ $file->id }}')"
+                    <div @if ($q !== 'a') onclick="selectPdf('{{ $file->id }}')" @endif
                         class="col-lg-6 cursor-pointer col-xl-4 
                         {{ $id == $file->id ? 'active' : '' }} pdf-item"
                         data-title="Annual Report 2024">
@@ -49,11 +49,28 @@
                                     <i class="bi bi-download me-1"></i>Download
                                 </button>
 
-                                <form action="{{ route('resume.add') }}" id="selectPdf" method="post">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
-                                    <input id="resume" type="hidden" name="resume" value="">
-                                </form>
+                                @if ($q == 'a')
+                                    <form method="post" action="{{ route('file.delete') }}">
+                                        @method('DELETE');
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $file->id }}">
+                                        <input type="hidden" name="public_path" value="{{ $file->public_path }}">
+                                        <button class="btn btn-download" style="background-color: red; border: none"
+                                            type="submit">
+                                            <i class="bi bi-trash me-1"></i>Delete
+                                        </button>
+                                    </form>
+                                @endif
+
+                                @if ($q != 'a')
+                                    <form action="{{ route('resume.add') }}" id="selectPdf" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+                                        <input id="resume" type="hidden" name="resume" value="">
+                                    </form>
+                                @endif
+
+
                             </div>
                         </div>
                     </div>

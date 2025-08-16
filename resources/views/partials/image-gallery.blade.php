@@ -62,7 +62,7 @@
                                      onclick="downloadImage('{{ $item->public_path }}')">
                                      <i class="bi bi-download"></i> Save
                                  </button>
-                                 @if ($q !== 'add')
+                                 @if ($q == 'a')
                                      <form action="{{ route('file.delete') }}" method="post">
                                          @method('DELETE')
                                          @csrf

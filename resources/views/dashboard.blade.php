@@ -21,3 +21,7 @@
         <x-resume-crud :resume="$resume" />
     </div><!--end row-->
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/fetchpdf.js') }}"></script>
+@endsection

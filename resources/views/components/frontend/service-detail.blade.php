@@ -12,7 +12,7 @@
             <img src="{{ asset($service->file_manager->public_path) }}" alt="zelio" />
             <div class="col-lg-8 mx-lg-auto mt-8 ">
                 <h5 class="fs-5 fw-medium">Description</h5>
-                <p class="text-300">{{ $service->description }}</p>
+                <p class="text-300">{!! $service->description !!}</p>
             </div>
         </div>
     </div>

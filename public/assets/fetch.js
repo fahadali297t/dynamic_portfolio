@@ -1,15 +1,21 @@
 const selectBtn = document.getElementById("selectImageBtn");
 
 selectBtn.addEventListener("click", async function () {
+    let q = "";
+    if (selectBtn.innerText == "Images") {
+        q = "a";
+    } else {
+        q = "b";
+    }
     selectBtn.disabled = true;
-    await fetchImageGallery(); // Wait until finished
+    await fetchImageGallery(q); // Wait until finished
     const modal = new bootstrap.Modal(document.getElementById("imageModal"));
     modal.show(); // Open modal after fetchData
     selectBtn.disabled = false;
 });
 
-async function fetchImageGallery() {
-    await fetch(`/admin/images?q=add`)
+async function fetchImageGallery(q) {
+    await fetch(`/admin/images?q=` + q)
         .then((response) => response.text()) // Blade returns HTML, so use .text()
         .then((html) => {
             document.getElementById("imageModal").innerHTML = html;

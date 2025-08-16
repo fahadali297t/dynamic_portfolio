@@ -42,9 +42,9 @@
                             @enderror
                         </div>
                         <div>
-                            <label for="review" class="form-label">Review:</label>
+                            <label for="editor" class="form-label">Review:</label>
 
-                            <textarea name="review" id="review" class="form-control" rows="10" aria-label="With textarea">{{ $data->review }}
+                            <textarea name="review" id="editor" class="form-control" rows="10" aria-label="With textarea">{!! $data->review !!}
                             </textarea>
                             @error('review')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
@@ -104,5 +104,16 @@
                 // preview.style.display = 'none';
             }
         });
+    </script>
+@endsection
+
+@section('scripts')
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 @endsection

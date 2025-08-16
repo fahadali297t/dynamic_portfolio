@@ -72,9 +72,9 @@
                         </select>
                         {{-- description --}}
                         <div>
-                            <label for="description" class="form-label">Description*:</label>
+                            <label for="editor" class="form-label">Description*:</label>
 
-                            <textarea name="description" id="description" class="form-control" rows="10" aria-label="With textarea">{{ old('description') }}</textarea>
+                            <textarea name="description" id="editor" class="form-control" rows="10" aria-label="With textarea">{{ old('description') }}</textarea>
                             @error('description')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
                             @enderror
@@ -123,5 +123,13 @@
 @endsection
 
 @section('scripts')
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     <script src="{{ asset('assets/fetch.js') }}"></script>
 @endsection
