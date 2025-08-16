@@ -23,8 +23,8 @@ return new class extends Migration
             $table->date('complete')->nullable();
             $table->string('link')->nullable();
 
-            $table->foreignIdFor(Services::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(FileManager::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Services::class)->constrained()->restrictOnDelete();
+            $table->foreignIdFor(FileManager::class)->constrained()->restrictOnDelete();
 
 
             $table->timestamps();

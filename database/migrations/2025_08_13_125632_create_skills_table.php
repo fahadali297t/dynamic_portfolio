@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('experty');
-            $table->foreignIdFor(FileManager::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(FileManager::class)->constrained()->restrictOnDelete();
             $table->timestamps();
         });
     }

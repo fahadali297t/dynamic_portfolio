@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('short_description')->nullable();
             $table->text('description');
-            $table->foreignIdFor(FileManager::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(FileManager::class)->constrained()->restrictOnDelete();
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class UserController extends Controller
         $experiences = Experience::get();
         $skills = Skill::paginate(6);
         $user = Designer::first();
-        $resume_id = User::first()->resume;
+        $resume_id = "";
         $resume = '';
         if ($resume_id) {
             $resume = FileManager::where('id', $resume_id)->first()->public_path;

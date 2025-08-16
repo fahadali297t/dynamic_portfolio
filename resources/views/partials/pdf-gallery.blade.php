@@ -48,7 +48,6 @@
                                 <button class="btn btn-download " onclick="downloadPDF('{{ $file->public_path }}')">
                                     <i class="bi bi-download me-1"></i>Download
                                 </button>
-
                                 @if ($q == 'a')
                                     <form method="post" action="{{ route('file.delete') }}">
                                         @method('DELETE');

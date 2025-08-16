@@ -278,7 +278,6 @@ html.dark-theme .modal-title {
     background-color: white;
     border-top: 1px solid #f3f4f6;
     display: flex;
-    flex-direction: column;
     gap: 8px;
     justify-content: center;
 }
@@ -307,7 +306,7 @@ html.dark-theme .modal-title {
 }
 
 .btn-download {
-    width: 100%;
+    /* width: 100%; */
     background-color: #3b82f6;
     border-color: #3b82f6;
     color: white;
@@ -379,6 +378,9 @@ html.dark-theme .modal-title {
         flex-direction: column;
     }
 
+    .btn-download {
+        width: 100%;
+    }
     .btn-action {
         max-width: none;
         margin-bottom: 8px;

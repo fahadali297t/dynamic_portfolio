@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Designer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,6 +20,8 @@ return new class extends Migration
             $table->string('ext');
             $table->enum('type', ['image', 'video', 'document']);
             $table->bigInteger('size');
+
+            $table->foreignIdFor(Designer::class)->nullable()->constrained()->restrictOnDelete();
             $table->timestamps();
         });
     }

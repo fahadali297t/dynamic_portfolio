@@ -4,6 +4,7 @@ const inputField = document.getElementById("files");
 inputField.addEventListener("change", () => {
     if (inputField.files.length > 0) {
         form.submit();
+        inputField.disabled = true; // disable further clicks/changes
     }
 });
 
