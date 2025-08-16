@@ -36,18 +36,19 @@
                 </div>
                 <div class="fm-menu">
                     <div class="list-group list-group-flush m-3">
-                        <a href="{{ route('file.view') }}" class="list-group-item py-1"><i
-                                class="bx bx-folder me-2 text-primary"></i><span>All Files</span></a>
+                        <button disabled class=" d-flex justify-content-start align-items-center btn-media py-1"><i
+                                class="bx bx-folder me-2 text-primary"></i><span>All Files</span></button>
 
 
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#imageModal"
-                            class="list-group-item py-1"><i
-                                class="bi bi-file-earmark-image-fill me-2 text-warning"></i><span>Images</span></a>
+                        <button type="button" id="selectImageBtn"
+                            class=" d-flex justify-content-start align-items-center btn-media py-1"><i
+                                class="bi bi-file-earmark-image-fill me-2 text-warning"></i><span>Images</span></button>
 
-                        <a href="javascript:;" class="list-group-item py-1"><i
-                                class="bi bi-camera-reels-fill me-2 text-primary"></i><span>Videos</span></a>
-                        <a href="javascript:;" class="list-group-item py-1"><i
-                                class="bi bi-file-earmark-break-fill me-2 text-info"></i><span>Documents</span></a>
+                        <button type="button" class=" d-flex justify-content-start align-items-center btn-media py-1"><i
+                                class="bi bi-camera-reels-fill me-2 text-primary"></i><span>Videos</span></button>
+                        <button type="button" class=" d-flex justify-content-start align-items-center btn-media py-1"><i
+                                class="bi bi-file-earmark-break-fill me-2 text-info"></i><span>Documents</span></button>
+
 
                     </div>
                 </div>
@@ -117,23 +118,5 @@
 
 
 @section('scripts')
-    <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            await fetchImageGallery();
-        });
-
-        function fetchImageGallery() {
-            fetch(`/admin/images`)
-                .then((response) => response.text()) // Blade returns HTML, so use .text()
-                .then((html) => {
-                    document.getElementById("imageModal").innerHTML = html;
-                    // document.getElementById("imageModal").classList.toggle("d-none");
-                })
-                .catch((error) => console.error("Error loading preview:", error));
-        }
-    </script>
-
-    <script>
-      
-    </script>
+    <script src="{{ asset('assets/fetch.js') }}"></script>
 @endsection

@@ -1,3 +1,7 @@
+@php
+    $user = \App\Models\Designer::first();
+@endphp
+
 <section id="contact" class="section-contact-1 bg-900 position-relative pt-150 pb-lg-250 pb-150 overflow-hidden">
     <div class="container position-relative z-1">
         <h3 class="ds-3 mt-3 mb-3 text-primary">Get in touch</h3>
@@ -15,9 +19,9 @@
                     </div>
                     <div class="ps-3">
                         <span class="text-400 fs-5">Phone Number</span>
-                        <h6 class="mb-0">+1-234-567-8901</h6>
+                        <h6 class="mb-0">{{ $user->phone_number }}</h6>
                     </div>
-                    <a href="tel:+1-234-567-8901" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                    <a href="tel:{{ $user->phone_number }}" class="position-absolute top-0 start-0 w-100 h-100"></a>
                 </div>
                 <div class="d-flex align-items-center mb-4 position-relative d-inline-flex">
                     <div
@@ -26,20 +30,21 @@
                     </div>
                     <div class="ps-3">
                         <span class="text-400 fs-5">Email</span>
-                        <h6 class="mb-0">contact@william.design</h6>
+                        <h6 class="mb-0">{{ $user->email }}</h6>
                     </div>
-                    <a href="mailto:someone@example.com" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                    <a href="mailto:{{ $user->email }}" class="position-absolute top-0 start-0 w-100 h-100"></a>
                 </div>
                 <div class="d-flex align-items-center mb-4 position-relative d-inline-flex">
                     <div
                         class="bg-white icon-flip position-relative icon-shape icon-xxl border-linear-2 border-2 rounded-4">
-                        <i class="ri-skype-fill text-primary fs-26"></i>
+                        <i class="ri-linkedin-fill text-primary fs-26"></i>
                     </div>
                     <div class="ps-3">
-                        <span class="text-400 fs-5">Skype</span>
-                        <h6 class="mb-0">WilliamDesignUX</h6>
+                        <span class="text-400 fs-5">Linkedin</span>
+                        <h6 class="mb-0">Connect Now</h6>
                     </div>
-                    <a href="skype:SKYPENAME?add" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                    <a target="_blank" href="{{ $user->linkedin ?? '' }}"
+                        class="position-absolute top-0 start-0 w-100 h-100"></a>
                 </div>
                 <div class="d-flex align-items-center mb-4 position-relative d-inline-flex">
                     <div
@@ -48,7 +53,7 @@
                     </div>
                     <div class="ps-3">
                         <span class="text-400 fs-5">Address</span>
-                        <h6 class="mb-0">0811 Erdman Prairie, Joaville CA</h6>
+                        <h6 class="mb-0">{{ $user->address }}</h6>
                     </div>
                     <a href="https://maps.google.com/maps?q=1st+avenue,New+York"
                         class="position-absolute top-0 start-0 w-100 h-100"></a>
