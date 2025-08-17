@@ -7,7 +7,7 @@
                  </h1>
                  <p class="text-300 mb-6">I assist individuals and brands in achieving their objectives by
                      creating and developing user-focused digital products and interactive experiences.</p>
-                 <a onclick="downloadPDF('{{ $resume }}')" class="btn btn-gradient me-2">
+                 <a href="{{ asset($resume) }}" download="fahadaliresume.pdf" class="btn btn-gradient me-2">
                      Download CV
                      <i class="ri-download-line ms-2"></i>
                  </a>

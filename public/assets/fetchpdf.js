@@ -39,7 +39,7 @@ function downloadPDF(filename) {
     const pdfPath = "/" + filename;
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "fahadaliresume.pdf"; // optional custom filename
+    link.download; // optional custom filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

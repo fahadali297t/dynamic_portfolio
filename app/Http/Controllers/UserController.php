@@ -24,8 +24,16 @@ class UserController extends Controller
         $user = Designer::first();
         $resume_id = "";
         $resume = '';
+
+        $designer = Designer::with(['file_manager' => function ($query) {
+            $query->where('ext', 'pdf');
+        }])->first();
+        if ($designer) {
+            $resume_id = $designer->file_manager[0]->id;
+        }
+
         if ($resume_id) {
-            $resume = FileManager::where('id', $resume_id)->first()->public_path;
+            $resume = $designer->file_manager[0]->public_path;
         }
         return view(
             'welcome',
@@ -39,10 +47,6 @@ class UserController extends Controller
                 'user' => $user,
             ]
         );
-
-
-
-        // return $services;
     }
 
     public function services()
@@ -82,9 +86,22 @@ class UserController extends Controller
             'resume' => 'required',
         ]);
         if ($data) {
-            $user =  User::findorfail($request->id);
-            $user->resume = $request->resume;
-            $user->save();
+
+            $user =  Designer::with(['file_manager' => function ($query) {
+                $query->where('ext', 'pdf');
+            }])->first();
+            if ($user->file_manager->isNotEmpty()) {
+                $file_id =  $user->file_manager[0]->id;
+                $file = FileManager::findorfail($file_id);
+                $file->designer_id = null;
+                $file->save();
+            }
+
+
+            $file = FileManager::findorfail($data['resume']);
+            $file->designer_id = $data['id'];
+            $file->save();
+
             return redirect()->route('dashboard')->with('success', 'Resume Updated Successfully');
         } else {
             return redirect()->route('dashboard')->with('error', 'We are facing some error');

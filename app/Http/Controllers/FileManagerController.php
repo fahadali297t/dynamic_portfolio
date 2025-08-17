@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Database\QueryException;
 
 class FileManagerController extends Controller
 {
@@ -128,20 +129,30 @@ class FileManagerController extends Controller
         }
     }
 
+
     public function delete(Request $request)
     {
         $path = str_replace('storage/', '', $request->public_path);
-        // Storage::disk('public')->delete($request->public_path);
-        // dd($request->all());
+
         if (Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
-            $file = FileManager::findorfail($request->id);
-            $file->delete();
-            return redirect()->route('file.view')->with('success', 'File Deleted Successfully');
+
+            $file = FileManager::findOrFail($request->id);
+
+            try {
+                $file->delete();
+                return redirect()->route('file.view')->with('success', 'File Deleted Successfully');
+            } catch (QueryException $e) {
+                if ($e->getCode() == "23000") { // FK violation
+                    return redirect()->route('file.view')->with('error', 'This file is linked to other records and cannot be deleted.');
+                }
+                throw $e;
+            }
         } else {
             return redirect()->route('file.view')->with('error', 'File Not Found');
         }
     }
+
 
 
     // for Images to show 

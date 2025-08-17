@@ -12,9 +12,17 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $resume_id = Auth::user()->resume;
+        $resume = '';
+        $resume_id = '';
         $details = Designer::first();
-        $resume = FileManager::where('id', $resume_id)->first();
+        $designer = Designer::with(['file_manager' => function ($query) {
+            $query->where('ext', 'pdf');
+        }])->first();
+
+        if ($designer && $designer->file_manager->isNotEmpty()) {
+            $resume = $designer->file_manager->first(); // safer than [0]
+            $resume_id = $resume->id;
+        }
         return view('dashboard', ['details' => $details, 'resume' => $resume]);
         // return $resume;
     }
