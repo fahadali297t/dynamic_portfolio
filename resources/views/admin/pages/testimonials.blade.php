@@ -3,7 +3,12 @@
 
 @section('content')
     <x-breadcrumb parent="Dashboard" child="Testimonials" />
-
+    @if (session('success'))
+        <x-success :msg="session('success')" />
+    @endif
+    @if (session('error'))
+        <x-error :msg="session('error')" />
+    @endif
 
     <div class="card">
         <div class="card-body">
@@ -32,7 +37,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="d-flex align-items-center gap-3 cursor-pointer">
-                                        <img src="{{ asset('storage/photos/' . $item->image) }}" class="rounded-circle"
+                                        <img src="{{ asset($item->file_manager->public_path) }}" class="rounded-circle"
                                             width="44" height="44" alt="">
                                         <div class="">
                                             <p class="mb-0">{{ $item->name }}</p>
@@ -42,7 +47,7 @@
                                 <td>
                                     <x-rating :rat="$item->rating" />
                                 </td>
-                                <td>{{ Str::words($item->review, 6, '...') }}</td>
+                                <td>{!! Str::words($item->review, 6, '...') !!}</td>
 
                                 <td>
                                     <div class="table-actions d-flex align-items-center gap-3 fs-6">

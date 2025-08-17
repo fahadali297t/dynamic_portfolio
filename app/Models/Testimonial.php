@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testimonial extends Model
 {
-    public $guarded = [];
+    protected $guarded = [];
+
+    public function file_manager()
+    {
+        return $this->belongsTo(FileManager::class);
+    }
 }
