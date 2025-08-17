@@ -36,26 +36,38 @@
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                    <input type="hidden" name="image_id" value="{{ $skill->file_manager->id }}" id="image_id">
-                    <input type="hidden" name="id" value="{{ $skill->id }}">
-                    <button id="selectImageBtn" type="button" class="btn btn-primary">
-                        Select Image
-                    </button>
-                    <div class="mt-3 text-center">
-                        <h6>Please Select Image :</h6>
-                        <img id="selectedImagePreview" src="{{ asset($skill->file_manager->public_path) }}"
-                            class="img-thumbnail mb-3" style="max-width: 300px;">
-                    </div>
+                <div class="card">
+                    <div class="d-flex card-body  flex-column justify-content-center align-items-center">
 
-                </div>
-                @error('image_id')
-                    <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
-                @enderror
-                <div class="d-flex justify-content-center align-items-center">
-                    <button type="submit" class="btn btn-primary px-5">
-                        Publish
-                    </button>
+                        <input type="hidden" name="image_id" id="image_id">
+                        <button id="selectImageBtn" type="button" class="btn btn-outline-primary">
+                            Select Image
+                        </button>
+
+
+                        <div class="mt-3 text-center">
+                            <div class="upload_image_container">
+                                <div class="overlay_image_upload">
+                                    <i class="bi bi-card-image "></i>
+                                </div>
+
+                                <img class="upload_image" id="selectedImagePreview"
+                                    src="{{ asset($data->file_manager->public_path) }}" alt="Upload Image">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    @error('image_id')
+                        <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
+                    @enderror
+                    <input type="hidden" name="id" value="{{ $data->id }}">
+                    <div class="d-flex mb-5 justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-primary px-5">
+                            Update
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

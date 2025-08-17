@@ -26,9 +26,9 @@
     <x-frontend.brands />
 
     <!-- testimonials 1 -->
-    <x-frontend.testimonials />
+    <x-frontend.testimonials :testimonial="$testimonial" />
     <!-- blog 1 -->
-    <x-frontend.blogs />
+    {{-- <x-frontend.blogs /> --}}
 
     <!-- Contact 1-->
     <x-frontend.contact />

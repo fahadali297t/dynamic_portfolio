@@ -20,6 +20,13 @@
         {{-- for resume --}}
         <x-resume-crud :resume="$resume" />
     </div><!--end row-->
+
+    <div class="row">
+        {{-- skills --}}
+        <x-primary-img />
+        {{-- for resume --}}
+        <x-secondary-img />
+    </div><!--end row-->
 @endsection
 
 @section('scripts')

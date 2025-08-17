@@ -6,9 +6,9 @@
             <div class="dot"></div>
             <div class="dot"></div>
         </div>
-        <div class="loading-text">Loading</div>
+        {{-- <div class="loading-text">Loading</div>
         <div class="progress-container">
             <div class="progress-bar"></div>
-        </div>
+        </div> --}}
     </div>
 </div>

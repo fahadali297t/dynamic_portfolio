@@ -100,6 +100,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/images', [FileManagerController::class, 'viewImage']);
     Route::get('/pdf', [FileManagerController::class, 'viewPdf']);
     Route::post('/pdf-submit', [UserController::class, 'addResume'])->name('resume.add');
+
+
+    // For Setting
+
+    Route::get('/settings', [AdminController::class, 'settings'])->name('setting');
 });
 
 require __DIR__ . '/auth.php';

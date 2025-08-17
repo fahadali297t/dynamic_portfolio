@@ -65,8 +65,6 @@
 
 
                         <div class="mt-3 text-center">
-                            {{-- <h6>Please Select Image :</h6>
-                        <img id="selectedImagePreview" src="" class="img-thumbnail mb-3" style="max-width: 300px;"> --}}
                             <div class="upload_image_container">
                                 <div class="overlay_image_upload">
                                     <i class="bi bi-card-image "></i>
@@ -82,7 +80,7 @@
 
                         </div>
                     </div>
-                    @error('image')
+                    @error('file_manager_id')
                         <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
                     @enderror
                     <div class="d-flex mb-5 justify-content-center align-items-center">

@@ -8,6 +8,7 @@ use App\Models\Experience;
 use App\Models\FileManager;
 use App\Models\Services;
 use App\Models\Skill;
+use App\Models\Testimonial;
 use App\Models\User;
 use App\Models\Work;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class UserController extends Controller
     public function viewHome()
     {
         $services = Services::with('file_manager')->orderBy('id', 'desc')->get();
+        $testimonials = Testimonial::with('file_manager')->orderBy('id', 'desc')->get();
         $work = Work::with(['services', 'file_manager'])->get();
         $educations = Education::get();
         $experiences = Experience::get();
@@ -45,6 +47,7 @@ class UserController extends Controller
                 'skills' => $skills,
                 'resume' => $resume,
                 'user' => $user,
+                'testimonial' => $testimonials
             ]
         );
     }

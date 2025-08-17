@@ -51,16 +51,9 @@
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
+
                 <li>
-                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
-                        <div class="d-flex align-items-center">
-                            <div class=""><i class="bi bi-person-fill"></i></div>
-                            <div class="ms-3"><span>Profile</span></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('setting') }}">
                         <div class="d-flex align-items-center">
                             <div class=""><i class="bi bi-gear-fill"></i></div>
                             <div class="ms-3"><span>Setting</span></div>
@@ -68,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="index2.html">
+                    <a class="dropdown-item" href="{{ route('dashboard') }}">
                         <div class="d-flex align-items-center">
                             <div class=""><i class="bi bi-speedometer"></i></div>
                             <div class="ms-3"><span>Dashboard</span></div>

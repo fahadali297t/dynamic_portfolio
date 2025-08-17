@@ -84,7 +84,7 @@
 
                         </div>
                     </div>
-                    @error('image')
+                    @error('file_manager_id')
                         <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
                     @enderror
                     <input type="hidden" name="id" value="{{ $data->id }}">

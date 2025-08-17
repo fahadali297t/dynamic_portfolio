@@ -47,18 +47,16 @@
                             @enderror
                         </div>
 
+                        <div class="d-flex justify-content-end align-items-center">
+                            <button type="submit" class="btn btn-primary px-5">
+                                Add
+                            </button>
+                        </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
 
-                <div class="d-flex justify-content-center align-items-center">
-                    <button type="submit" class="btn btn-primary px-5">
-                        Add
-                    </button>
-                </div>
-            </div>
         </div>
     </form>
 @endsection
