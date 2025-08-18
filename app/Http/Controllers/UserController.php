@@ -25,7 +25,6 @@ class UserController extends Controller
         $experiences = Experience::get();
         $skills = Skill::paginate(6);
         $user = Designer::first();
-        $primaryImage  = UserImg::with('file_manager')->where('purpose', 'primary')->first();
         $resume_id = "";
         $resume = '';
 
@@ -43,7 +42,6 @@ class UserController extends Controller
         return view(
             'welcome',
             [
-                'primaryImage' => $primaryImage,
                 'services' => $services,
                 'works' => $work,
                 'educations' => $educations,

@@ -40,7 +40,11 @@
          </div>
      </div>
      <div class="shape-1 position-absolute bottom-0 start-50 z-1 ms-10 d-none d-md-block">
-         <img class="position-relative z-1 filter-gray" src="assets/imgs/hero/hero-1/man.png" alt="man" />
+         @if ($user->primaryImage)
+             <img class="position-relative z-1 filter-gray" src="{{ asset($user->primaryImage) }}" alt="man" />
+         @else
+             <img class="position-relative z-1 filter-gray" src="assets/imgs/hero/hero-1/man.png" alt="man" />
+         @endif
          <div class="position-absolute top-50 start-0 translate-middle z-0 mt-8 ms-10 ps-8">
              <img class="ribbonRotate" src="assets/imgs/hero/hero-1/decorate.png" alt="zelio" />
          </div>

@@ -24,12 +24,12 @@
                                              <i class="ri-star-fill fs-7 text-500 text-primary"></i>
                                          </div>
                                          <h6 class="mb-7">{!! $item->review !!}</h6>
-                                         <a href="#text-primary" class="d-flex align-items-center">
+                                         <p class="d-flex align-items-center">
                                              <img class="icon_65 avatar" src="{{ $item->file_manager->public_path }}"
                                                  alt="zelio" />
-                                             <h6 class="ms-2 mb-0">{{ $item->name }} <span class="fs-6 fw-regular">
-                                                     -{{ $item->position }}</span></h6>
-                                         </a>
+                                         <h6 class="ms-2 mb-0">{{ $item->name }} <span class="fs-6 fw-regular">
+                                                 -{{ $item->position }}</span></h6>
+                                         </p>
                                          <div class="position-absolute top-0 end-0 m-5">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52"
                                                  viewBox="0 0 52 52" fill="none">
@@ -62,7 +62,11 @@
          </div>
      </div>
      <div class="shape-1 position-absolute bottom-0 start-50 z-1 ms-10 ps-10 d-none d-md-block">
-         <img class="position-relative z-1" src="assets/imgs/testimonials/testimonials-1/man.png" alt="man" />
+         @if ($user->secondaryImage)
+             <img class="position-relative z-1" src="{{ asset($user->secondaryImage) }}" alt="man" />
+         @else
+             <img class="position-relative z-1" src="assets/imgs/testimonials/testimonials-1/man.png" alt="man" />
+         @endif
          <div class="position-absolute top-50 start-50 translate-middle z-0 mt-5">
              <img class="ribbonRotate" src="assets/imgs/testimonials/testimonials-1/decorate.png" alt="zelio" />
          </div>

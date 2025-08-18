@@ -3,8 +3,7 @@
 <main id="mainContent">
     <!-- prettier-ignore -->
             <!--Home 1 Section 1-->
-    <x-frontend.her
-    o :resume="$resume" :user="$user" />
+    <x-frontend.hero :resume="$resume" :user="$user" />
 
     <!--Static 1-->
     <x-frontend.stats />
@@ -27,7 +26,7 @@
     <x-frontend.brands />
 
     <!-- testimonials 1 -->
-    <x-frontend.testimonials :testimonial="$testimonial" />
+    <x-frontend.testimonials :testimonial="$testimonial" :user="$user" />
     <!-- blog 1 -->
     {{-- <x-frontend.blogs /> --}}
 
