@@ -114,6 +114,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/del-contact-request', [ContactController::class,  'del'])->name('contact.del');
     // 
     Route::get('/settings', [AdminController::class, 'settings'])->name('setting');
+    Route::put('/updateEmailandPassword', [AdminController::class, 'updateEmailAndPassword'])->name('setting.update');
 });
 
 require __DIR__ . '/auth.php';

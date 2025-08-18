@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Designer;
 use App\Models\FileManager;
 use App\Models\Skill;
+use App\Models\User;
 use App\Models\UserImg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -71,6 +73,31 @@ class AdminController extends Controller
             return redirect()->route('dashboard');
         } else {
             # code...
+        }
+    }
+
+
+    public function settings()
+    {
+        return view('admin.pages.settings');
+    }
+
+
+    public function updateEmailAndPassword(Request $request)
+    {
+        $data  = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'id' => 'required'
+        ]);
+        if ($data) {
+            $user = User::findorfail($request->id);
+            $user->email = $data['email'];
+            $user->password = Hash::make($data['password']);
+            $user->save();
+            return redirect()->route('setting')->with('success', 'Record Updated');
+        } else {
+            return redirect()->route('setting')->with('error', 'Something went wrong');
         }
     }
 }

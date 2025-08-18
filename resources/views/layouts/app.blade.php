@@ -65,8 +65,7 @@
 <!--end wrapper-->
 
 
+@yield('scripts')
 
 
 @include('layouts.admin.foot')
-
-@yield('scripts')

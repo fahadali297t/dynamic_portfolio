@@ -19,7 +19,7 @@
         {{-- for resume --}}
         <x-resume-crud :resume="$resume" />
     </div><!--end row-->
-
+    {{-- For Images --}}
     <div class="row">
         <div class="col-12">
             <div class="card">

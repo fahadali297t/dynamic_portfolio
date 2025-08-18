@@ -17,8 +17,6 @@ class DesignerSeeder extends Seeder
             'name' => 'John Doe',
             'phone_number' => '+92 3001234567',
             'email' => 'john@example.com',
-            'primaryImage' => 'assets/imgs/hero/hero-1/man.png',
-            'secondaryImage' => 'assets/imgs/testimonials/testimonials-1/man.png',
         ]);
     }
 }
