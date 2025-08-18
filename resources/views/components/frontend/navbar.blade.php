@@ -30,15 +30,14 @@
                                   href="{{ route('user.projects') }}">Portfolio</a>
                           </li>
 
-                          <li class="nav-item  has-children">
-                              <a class="nav-link" href="#">Pricing</a>
-                          </li>
+
                           {{-- 
                           <li class="nav-item">
                               <a class="nav-link" href="blog-list.html">Blog</a>
                           </li> --}}
                           <li class="nav-item">
-                              <a class="nav-link" href="#contact">Contact</a>
+                              <a class="nav-link {{ request()->routeIs('user.contact') ? 'active' : '' }}"
+                                  href="{{ route('user.contact') }}">Contact</a>
                           </li>
                       </ul>
                   </div>
@@ -146,32 +145,22 @@
                       <div class="mobile-menu-wrap mobile-header-border">
                           <nav>
                               <ul class="mobile-menu font-heading ps-0">
-                                  <li class="nav-item has-children">
-                                      <a class="nav-link active" href="#">Home</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="index.html">Landing page</a></li>
-                                          <li><a href="index-1.html">Home 1 - Designer</a></li>
-                                          <li><a href="index-2.html">Home 2 - Developer</a></li>
-                                          <li><a href="index-3.html">Home 3 - Author</a></li>
-                                      </ul>
+                                  <li class="nav-item ">
+                                      <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} "
+                                          href="{{ route('home') }}">Home</a>
                                   </li>
 
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="services.html">Services</a>
+                                  <li class="nav-item ">
+                                      <a class="nav-link {{ request()->routeIs('user.services') ? 'active' : '' }} "
+                                          href="{{ route('user.services') }}">Services</a>
                                   </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="work.html">Portfolio</a>
+                                  <li class="nav-item ">
+                                      <a class="nav-link {{ request()->routeIs('user.projects') ? 'active' : '' }} "
+                                          href="{{ route('user.projects') }}">Portfolio</a>
                                   </li>
-
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="pricing.html">Pricing</a>
-                                  </li>
-
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="blog-list.html">Blog</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="#contact">Contact</a>
+                                  <li class="nav-item ">
+                                      <a class="nav-link {{ request()->routeIs('user.contact') ? 'active' : '' }} "
+                                          href="{{ route('user.contact') }}">Contact Us</a>
                                   </li>
                               </ul>
                           </nav>

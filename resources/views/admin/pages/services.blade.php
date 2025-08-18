@@ -62,7 +62,8 @@
 
                                 <td>
                                     <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                        <a href="{{ route('user.services.view', ['id' => $item->id]) }}"
+                                            class="text-primary" target="_blank" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="Views"><i class="bi bi-eye-fill"></i>
                                         </a>
 

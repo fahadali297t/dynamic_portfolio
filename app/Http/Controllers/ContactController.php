@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormSubmitted;
+use App\Models\Designer;
 
 class ContactController extends Controller
 {
@@ -18,17 +21,29 @@ class ContactController extends Controller
                 'message' => 'required|string',
             ]);
 
-            Contact::create($data);
+            // Save to database
+            $contact = Contact::create($data);
+
+            // Send confirmation email to user
+            Mail::to($data['email'])->send(new ContactFormSubmitted($contact));
+
+            // Optional: Send notification email to admin
+            // Mail::to('admin@yoursite.com')->send(new ContactFormReceived($contact));
 
             return response()->json([
                 'success' => true,
-                'message' => 'Your message has been sent successfully!'
+                'message' => 'Your message has been sent successfully! Check your email for confirmation.'
             ], 200);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json([
                 'success' => false,
                 'errors' => $e->errors()
             ], 422);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to send email. Please try again.'
+            ], 500);
         }
     }
 

@@ -112,4 +112,12 @@ class UserController extends Controller
             return redirect()->route('dashboard')->with('error', 'We are facing some error');
         }
     }
+
+
+    // contact us
+
+    public function contact_us()
+    {
+        return view('frontend.contact');
+    }
 }

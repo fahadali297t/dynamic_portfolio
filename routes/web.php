@@ -26,6 +26,8 @@ Route::group(['as' => 'user.'], function () {
     Route::get('/projects', [UserController::class, 'projects'])->name('projects');
     Route::get('/projects/{id}', [UserController::class, 'singleProject'])->name('projects.view');
 
+    Route::get('/contact-us', [UserController::class, 'contact_us'])->name('contact');
+
     // 
 });
 

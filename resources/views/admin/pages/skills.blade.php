@@ -60,9 +60,7 @@
 
                                 <td>
                                     <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom" title="Views"><i class="bi bi-eye-fill"></i>
-                                        </a>
+
 
                                         {{-- for edit --}}
                                         <form action="{{ route('skill.edit') }}" method="GET">
