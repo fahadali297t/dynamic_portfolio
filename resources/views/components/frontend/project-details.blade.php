@@ -19,7 +19,7 @@
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Complete</p>
-                    <h6>{{ $project->end ?? 'Not Specified' }}</h6>
+                    <h6>{{ $project->complete ?? 'Not Specified' }}</h6>
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Services</p>
@@ -34,7 +34,7 @@
             <div class="col-lg-8 mx-lg-auto mt-8">
                 <h5 class="fs-5 fw-medium">Description</h5>
                 <p class="text-300">
-                    {{ $project->description }}
+                    {!! $project->description !!}
                 </p>
             </div>
         </div>

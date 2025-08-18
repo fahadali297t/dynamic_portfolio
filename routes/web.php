@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DesignerController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
@@ -105,6 +106,13 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/add-user-image', [AdminController::class, 'addUserImage'])->name('userImg');
     // For Setting
 
+    // For Contact us form:
+
+    Route::post('/add-contact', [ContactController::class,  'submit_contact'])->name('contact.add');
+    Route::get('/contact-requests', [ContactController::class,  'list'])->name('contact.list');
+    Route::get('/contact-request/{id}', [ContactController::class,  'view'])->name('contact.view');
+    Route::delete('/del-contact-request', [ContactController::class,  'del'])->name('contact.del');
+    // 
     Route::get('/settings', [AdminController::class, 'settings'])->name('setting');
 });
 

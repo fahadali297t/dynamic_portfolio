@@ -63,46 +63,50 @@
                 <div class="position-relative">
                     <div class="position-relative z-2">
                         <h3>Leave a messge</h3>
-                        <form action="#">
+                        <form id="contactForm" data-url="{{ route('contact.add') }}">
+                            @csrf
                             <div class="row mt-3">
                                 <div class="col-md-6 ">
                                     <label class="mb-1 mt-3 text-dark" for="name">Your name <span
                                             class="text-primary">*</span></label>
                                     <input type="text" class="form-control border rounded-3" id="name"
-                                        name="name" placeholder="John Doe" aria-label="username" />
+                                        name="name" placeholder="John Doe" />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="mb-1 mt-3 text-dark" for="email">Email address <span
                                             class="text-primary">*</span></label>
                                     <input type="text" class="form-control border rounded-3" id="email"
-                                        name="email" placeholder="contact.john@gmail.com" aria-label="email" />
+                                        name="email" placeholder="contact.john@gmail.com" />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="mb-1 mt-3 text-dark" for="phone">Your phone <span
                                             class="text-primary">*</span></label>
                                     <input type="text" class="form-control border rounded-3" id="phone"
-                                        name="phone" placeholder="+01 234 567 89" aria-label="phone" />
+                                        name="phone" placeholder="+01 234 567 89" />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="mb-1 mt-3 text-dark" for="subject">Subject <span
                                             class="text-primary">*</span></label>
                                     <input type="text" class="form-control border rounded-3" id="subject"
-                                        name="subject" placeholder="I want to contact for...." aria-label="subject" />
+                                        name="subject" placeholder="I want to contact for...." />
                                 </div>
                                 <div class="col-12">
                                     <label class="mb-1 mt-3 text-dark" for="message">Message <span
                                             class="text-primary">*</span></label>
-                                    <textarea class="form-control border rounded-3 pb-10" id="message" name="message" placeholder="Your message here...."
-                                        aria-label="With textarea"></textarea>
+                                    <textarea class="form-control border rounded-3 pb-10" id="message" name="message" placeholder="Your message here...."></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-gradient mt-3">
+                                    <button type="submit" class="btn btn-gradient mt-3" id="submitBtn">
                                         Send Message
                                         <i class="ri-arrow-right-up-line"></i>
                                     </button>
                                 </div>
                             </div>
                         </form>
+
+                        <!-- Success/Error messages -->
+                        <div id="formMessage" class="mt-3"></div>
+
                     </div>
                     <div class="z-0 bg-primary-dark rectangle-bg z-1 rounded-3"></div>
                 </div>

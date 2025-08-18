@@ -16,3 +16,7 @@
         height: 450px;
     }
 }
+
+.text_white {
+    color: white !important;
+}
