@@ -110,7 +110,6 @@
                      <a href="#" class="fs-5 fw-bold">CSS,</a>
                      <a href="#" class="fs-5 fw-bold">Javascript,</a>
                      <a href="#" class="fs-5 fw-bold">Bootstrap,</a>
-                     <a href="#" class="fs-5 fw-bold">TailwindCSS</a>
                  </div>
              </div>
          </div>

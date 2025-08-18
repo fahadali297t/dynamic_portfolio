@@ -101,7 +101,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/pdf', [FileManagerController::class, 'viewPdf']);
     Route::post('/pdf-submit', [UserController::class, 'addResume'])->name('resume.add');
 
-
+    // For User Image
+    Route::post('/add-user-image', [AdminController::class, 'addUserImage'])->name('userImg');
     // For Setting
 
     Route::get('/settings', [AdminController::class, 'settings'])->name('setting');

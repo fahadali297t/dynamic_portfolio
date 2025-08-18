@@ -10,6 +10,7 @@ use App\Models\Services;
 use App\Models\Skill;
 use App\Models\Testimonial;
 use App\Models\User;
+use App\Models\UserImg;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,10 @@ class UserController extends Controller
         $experiences = Experience::get();
         $skills = Skill::paginate(6);
         $user = Designer::first();
+        $primaryImage  = UserImg::with('file_manager')->where('purpose', 'primary')->first();
         $resume_id = "";
         $resume = '';
+
 
         $designer = Designer::with(['file_manager' => function ($query) {
             $query->where('ext', 'pdf');
@@ -40,6 +43,7 @@ class UserController extends Controller
         return view(
             'welcome',
             [
+                'primaryImage' => $primaryImage,
                 'services' => $services,
                 'works' => $work,
                 'educations' => $educations,

@@ -750,6 +750,21 @@ html.dark-theme .btn-media {
 
 #selectedImagePreview {
     width: 100%;
-
     object-fit: cover;
+}
+
+.upload_image_dashboard {
+    min-height: 500px;
+    object-fit: contain !important;
+}
+.w-full {
+    width: 100%;
+}
+
+.UserImage {
+    max-width: 300px;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden    ;
 }
