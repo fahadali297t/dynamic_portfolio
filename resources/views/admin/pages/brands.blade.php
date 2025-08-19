@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <x-breadcrumb parent="Dashboard" child="Services" />
+    <x-breadcrumb parent="Dashboard" child="Brands" />
     @if (session('success'))
         <x-success :msg="session('success')" />
     @endif
@@ -13,102 +13,92 @@
 
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="bg-danger">Upload Brands Images</h1>
-                </div>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div><div class="col-12 col-md-6 col-lg-4">
-                            <div class="card bg-secondary image_card">
-                                <div class="card-body image_card">
-                                    <img class="card_image" src="{{ asset('assets/images/gallery/12.png') }}" alt="" srcset="">
-                                </div>
-                            </div>
-                        </div>
-                        
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Available Brands</h5>
+                <a href="{{ route('brand.new') }}" class="btn btn-main">
+                    Add New Brand
+                </a>
 
-                    </div>
-                </div>
+            </div>
+            <div class="table-responsive mt-3">
+                <table class="table align-middle">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Brand Name</th>
+
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i = 0;
+                        @endphp
+                        @forelse ($brands as $item)
+                            <tr>
+                                <td>
+                                    @php
+                                        echo ++$i;
+                                    @endphp
+
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 cursor-pointer">
+                                        <img src="{{ asset($item->file_manager->public_path) }}" class="rounded-lg"
+                                            width="100" height="50" alt="">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0">{{ $item->name }}</p>
+                                </td>
+
+
+
+
+                                <td>
+                                    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+
+
+                                        {{-- for edit --}}
+                                        <form action="{{ route('brand.edit') }}" method="GET">
+
+
+                                            <input type="hidden" name="id" value="{{ $item->id }}">
+                                            <a class="text-warning cursor-pointer" data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom" title="Edit"
+                                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                                <i class="bi bi-pencil-fill"></i>
+
+                                            </a>
+                                        </form>
+                                        {{-- for delete --}}
+                                        <form action="{{ route('brand.del') }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $item->id }}">
+                                            <a class="text-danger cursor-pointer" data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom" title="Delete"
+                                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                                <i class="bi bi-trash-fill"></i>
+
+                                            </a>
+                                        </form>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        @empty
+                            <tr>
+                                <td colspan="6" class="text-center ">No Skills Found</td>
+                            </tr>
+                        @endforelse
+
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

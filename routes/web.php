@@ -64,6 +64,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     // For Brand
     Route::get('/brands', [BrandController::class, 'list'])->name('brand.list');
+    Route::get('/new-brand', [BrandController::class, 'new'])->name('brand.new');
+    Route::post('/add-brand', [BrandController::class, 'add'])->name('brand.add');
+    Route::delete('/del-brand', [BrandController::class, 'del'])->name('brand.del');
+    Route::get('/edit-brand', [BrandController::class, 'edit'])->name('brand.edit');
+    Route::post('/update-brand', [BrandController::class, 'update'])->name('brand.update');
 
 
     // For Work

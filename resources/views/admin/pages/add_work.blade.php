@@ -62,14 +62,19 @@
                             <input id="end" type="date" name="end" class="form-control">
                         </div>
                         {{-- services --}}
-                        <select name="service_id" class="form-select mb-3" aria-label="Default select example">
-                            <option selected>Select Related Service</option>
+                        <label for="select" class="form-label">Select Service:</label>
+                        <select required name="service_id" class="form-select mb-3" aria-label="Default select example">
+                            <option value="">Select Related Service</option>
                             @forelse ($services as $service)
                                 <option value="{{ $service->id }}">{{ $service->name }}</option>
                             @empty
                             @endforelse
 
+
                         </select>
+                        @error('service_id')
+                            <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
+                        @enderror
                         {{-- description --}}
                         <div>
                             <label for="editor" class="form-label">Description*:</label>
@@ -100,8 +105,7 @@
                                 </div>
 
                                 <img class="upload_image" id="selectedImagePreview"
-                                    src="{{ asset('assets/images/image.jpg') }}"
-                                    alt="Upload Image">
+                                    src="{{ asset('assets/images/image.jpg') }}" alt="Upload Image">
 
 
                             </div>
