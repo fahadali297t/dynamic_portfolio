@@ -6,7 +6,11 @@
           </a>
           <div class="container py-3 px-0">
               <a class="navbar-brand d-flex main-logo align-items-center ms-lg-0 ms-md-5 ms-3" href="{{ route('home') }}">
-                  <img src="{{ asset('assets/imgs/template/favicon.svg') }}" alt="zelio" />
+                  @php
+                      $icon = \App\Models\Setting::first()->icon;
+                  @endphp
+                  <img style="width: 40px ; height: 40px;" src="{{ asset($icon ?? 'assets/imgs/template/favicon.svg') }}"
+                      alt="zelio" />
                   <span class="fs-4 ms-2 text-uppercase">{{ $user->name }}</span>
               </a>
               <div class="d-none d-lg-flex">

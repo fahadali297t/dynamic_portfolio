@@ -9,6 +9,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
@@ -122,6 +123,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     // 
     Route::get('/settings', [AdminController::class, 'settings'])->name('setting');
     Route::put('/updateEmailandPassword', [AdminController::class, 'updateEmailAndPassword'])->name('setting.update');
+
+    Route::put('/update-icon', [SettingController::class, 'updateIcon'])->name('icon.update');
 });
 
 require __DIR__ . '/auth.php';

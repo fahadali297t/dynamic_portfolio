@@ -5,7 +5,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{ asset('assets/imgs/template/favicon-gradient.svg') }}" type="image/png" />
+    @php
+        $icon = \App\Models\Setting::first()->icon;
+    @endphp
+    <link rel="icon" href="{{ asset($icon ?? "'assets/imgs/template/favicon-gradient.svg'") }}" type="image/png" />
 
     <link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />

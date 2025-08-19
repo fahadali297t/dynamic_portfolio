@@ -5,8 +5,12 @@
         <div class="section-footer position-relative pt-60 pb-60 bg-secondary-1">
             <div class="container position-relative z-1">
                 <div class="text-center">
-                    <a class="d-flex main-logo align-items-center d-inline-flex" href="index.html">
-                        <img src="{{ asset('assets/imgs/footer-1/logo.svg') }}" alt="zelio" />
+                    <a class="d-flex main-logo align-items-center d-inline-flex" href="{{ route('home') }}">
+                        @php
+                            $icon = \App\Models\Setting::first()->icon;
+                        @endphp
+                        <img style="width: 40px ; height: 40px;"
+                            src="{{ asset($icon ?? 'assets/imgs/footer-1/logo.svg') }}" alt="zelio" />
                         <span class="fs-4 ms-2 text-white-keep">{{ $user->name }}</span>
                     </a>
                     <div

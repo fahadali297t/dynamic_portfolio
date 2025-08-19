@@ -11,7 +11,11 @@
     <title>{{ $user->name }} - Crafting Intuitive Digital Experiences</title>
     <script src="{{ asset('assets/js/vendors/color-modes.js') }}"></script>
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/template/favicon-gradient.svg') }}" />
+    @php
+        $icon = \App\Models\Setting::first()->icon;
+    @endphp
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ asset($icon ?? "'assets/imgs/template/favicon-gradient.svg'") }}" />
     <!-- Libs CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/vendors/bootstrap.min.css') }} " />
     <link rel="stylesheet" href="{{ asset('assets/css/vendors/swiper-bundle.min.css') }} " />

@@ -12,42 +12,49 @@
 
     <div class="row">
         <div class="col-12 col-md-6 ">
-            <div class="card">
-                <div class="mt-3 ms-3">
-                    <h6 class="text-start width_full">Update Website Logo</h6>
-                </div>
+            <form action="{{ route('icon.update') }}" method="post">
+                @csrf
+                @method('PUT')
+                <div class="card">
+                    <div class="mt-3 ms-3">
+                        <h6 class="text-start width_full">Update Website Logo</h6>
+                    </div>
 
-                <div class="d-flex card-body  flex-column justify-content-center align-items-center">
+                    <div class="d-flex card-body  flex-column justify-content-center align-items-center">
 
-                    <input type="hidden" name="image_id" id="image_id">
-                    <button id="selectImageBtn" type="button" class="btn btn-outline-primary">
-                        Select Image
-                    </button>
+                        <input type="hidden" name="image_id" id="image_id">
+                        <button id="selectImageBtn" type="button" class="btn btn-outline-primary">
+                            Select Image
+                        </button>
 
 
-                    <div class="mt-3 text-center">
-                        <div class="upload_image_container" style="background-color: transparent ; box-shadow: none" >
-                            <div class="overlay_image_upload">
-                                <i class="bi bi-card-image "></i>
+                        <div class="mt-3 text-center">
+                            <div class="upload_image_container" style="background-color: transparent ; box-shadow: none">
+                                <div class="overlay_image_upload">
+                                    <i class="bi bi-card-image "></i>
+                                </div>
+                                @php
+                                    $icon = \App\Models\Setting::first()->icon;
+                                @endphp
+                                <img class="upload_image" id="selectedImagePreview"
+                                    src="{{ asset($icon ?? 'assets/imgs/template/favicon-gradient.svg') }}"
+                                    alt="Upload Image">
+
+
                             </div>
 
-                            <img class="upload_image" id="selectedImagePreview"
-                                src="{{ asset('assets/imgs/template/favicon-gradient.svg') }}" alt="Upload Image">
-
-
                         </div>
-
+                    </div>
+                    @error('image_id')
+                        <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
+                    @enderror
+                    <div class="d-flex mb-5 justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-primary px-5">
+                            Publish
+                        </button>
                     </div>
                 </div>
-                @error('image_id')
-                    <p class="text-danger text-center" style="font-size: 14px">{{ $message }}</p>
-                @enderror
-                <div class="d-flex mb-5 justify-content-center align-items-center">
-                    <button type="submit" class="btn btn-primary px-5">
-                        Publish
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 
