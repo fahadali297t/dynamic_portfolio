@@ -26,11 +26,10 @@ class ContactController extends Controller
             // Save to database
             $contact = Contact::create($data);
 
-            // Send confirmation email to user
-            Mail::to($data['email'])->send(new ContactFormSubmitted($contact));
             $admin_mail = Designer::first()->email;
-            // Optional: Send notification email to admin
-            Mail::to($admin_mail)->send(new ContactFormReceived($contact));
+            Mail::to($data['email'])->queue(new ContactFormSubmitted($contact));
+            Mail::to($admin_mail)->queue(new ContactFormReceived($contact));
+
 
             return response()->json([
                 'success' => true,
