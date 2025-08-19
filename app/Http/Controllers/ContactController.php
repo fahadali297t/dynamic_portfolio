@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormSubmitted;
 use App\Models\Designer;
+use App\Mail\ContactFormReceived;
+
 
 class ContactController extends Controller
 {
@@ -26,9 +28,9 @@ class ContactController extends Controller
 
             // Send confirmation email to user
             Mail::to($data['email'])->send(new ContactFormSubmitted($contact));
-
+            $admin_mail = Designer::first()->email;
             // Optional: Send notification email to admin
-            // Mail::to('admin@yoursite.com')->send(new ContactFormReceived($contact));
+            Mail::to($admin_mail)->send(new ContactFormReceived($contact));
 
             return response()->json([
                 'success' => true,
