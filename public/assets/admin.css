@@ -66,6 +66,15 @@
     border-radius: 5px;
 }
 
+.image_card {
+    height: 300px;
+}
+.card_image {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
 html.dark-theme .select {
     color: white;
 
@@ -766,5 +775,5 @@ html.dark-theme .btn-media {
     max-height: 500px;
     object-fit: cover;
     object-position: center;
-    overflow: hidden    ;
+    overflow: hidden;
 }

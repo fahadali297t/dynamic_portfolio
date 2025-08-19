@@ -98,7 +98,7 @@
                         @empty
 
                             <tr>
-                                <td colspan="5" class="text-center">
+                                <td colspan="100" class="text-center">
                                     Please Add some Services
                                 </td>
                             </tr>

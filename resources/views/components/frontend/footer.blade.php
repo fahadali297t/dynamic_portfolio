@@ -11,30 +11,25 @@
                     </a>
                     <div
                         class="navigation d-none d-md-flex align-items-center justify-content-center flex-wrap gap-4 my-4">
-                        <a href="index.html" class="fs-5">
+                        <a href="{{ route('home') }}" class="fs-5">
                             Home
                         </a>
-                        <a href="services.html" class="fs-5">
+                        <a href="{{ route('user.services') }}" class="fs-5">
                             Services
                         </a>
-                        <a href="work.html" class="fs-5">
+                        <a href="{{ route('user.projects') }}" class="fs-5">
                             Portfolio
                         </a>
-                        <a href="pricing.html" class="fs-5">
-                            Pricing
-                        </a>
-                        <a href="blog-list.html" class="fs-5">
-                            Blog
-                        </a>
-                        <a href="#contact" class="fs-5">
+
+                        <a href="{{ route('user.contact') }}" class="fs-5">
                             Contact
                         </a>
                     </div>
                 </div>
 
                 <div class="row text-center py-4">
-                    <span class="fs-6 text-white-keep">© 2024 All Rights Reserved by <span><a href="#"
-                                class="text-primary">{{ $user->name }}</a></span>
+                    <span class="fs-6 ">© {{ \Carbon\Carbon::now()->year }} All Rights Reserved by
+                        <span><a href="#" class="text-primary">{{ $user->name }}</a></span>
                 </div>
             </div>
             <div class="position-absolute top-0 start-0 w-100 h-100 z-0"

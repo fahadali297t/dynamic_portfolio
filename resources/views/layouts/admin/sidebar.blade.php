@@ -1,7 +1,7 @@
  <aside class="sidebar-wrapper" data-simplebar="true">
      <div class="sidebar-header">
          <div>
-             <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+             <img src="{{ asset('assets/imgs/template/favicon-gradient.svg') }}" class="logo-icon" alt="logo icon">
          </div>
          <div>
              <h4 class="logo-text">dashboard</h4>
@@ -62,6 +62,14 @@
                  <div class="parent-icon"><i class="bi bi-brush"></i>
                  </div>
                  <div class="menu-title">Skills</div>
+             </a>
+         </li>
+
+         <li>
+             <a href="{{ route('brand.list') }}">
+                 <div class="parent-icon"><i class="bi bi-patch-check"></i>
+                 </div>
+                 <div class="menu-title">Brands</div>
              </a>
          </li>
          <li>

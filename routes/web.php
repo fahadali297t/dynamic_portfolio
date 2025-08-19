@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DesignerController;
 use App\Http\Controllers\EducationController;
@@ -59,6 +60,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/del-service', [ServicesController::class, 'delService'])->name('service.del');
     Route::get('/edit-service', [ServicesController::class, 'editService'])->name('service.edit');
     Route::post('/update-service', [ServicesController::class, 'updateService'])->name('service.update');
+
+    // For Brand
+    Route::get('/brands', [BrandController::class, 'list'])->name('brand.list');
+
 
     // For Work
 

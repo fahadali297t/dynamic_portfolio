@@ -7,34 +7,47 @@
                  </h1>
                  <p class="text-300 mb-6">I assist individuals and brands in achieving their objectives by
                      creating and developing user-focused digital products and interactive experiences.</p>
-                 <a href="{{ asset($resume) }}" download="fahadaliresume.pdf" class="btn btn-gradient me-2">
-                     Download CV
-                     <i class="ri-download-line ms-2"></i>
-                 </a>
+                 @if ($resume)
+                     <a href="{{ asset($resume) }}" download="resume.pdf" class="btn btn-gradient me-2">
+                         Download CV
+                         <i class="ri-download-line ms-2"></i>
+                     </a>
+                 @else
+                     <a class="btn btn-gradient me-2">
+                         Download CV
+                         <i class="ri-download-line ms-2"></i>
+                     </a>
+                 @endif
                  <a href="#contact" class="btn btn-outline-secondary d-inline-flex align-items-center">
                      <span>Hire me</span>
                      <i class="ri-arrow-right-line ms-2"></i>
                  </a>
                  <p class="text-400 mt-6 mb-3">+ 12 years with professional design software</p>
                  <div class="d-flex gap-3">
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                         <img src="assets/imgs/hero/hero-1/brand-1.png" alt="brand" />
-                     </div>
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                         <img src="assets/imgs/hero/hero-1/brand-2.png" alt="brand" />
-                     </div>
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                         <img src="assets/imgs/hero/hero-1/brand-3.png" alt="brand" />
-                     </div>
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                         <img src="assets/imgs/hero/hero-1/brand-4.png" alt="brand" />
-                     </div>
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                         <img src="assets/imgs/hero/hero-1/brand-5.png" alt="brand" />
-                     </div>
-                     <div class="brand-logo icon-xl icon-shape rounded-3 bg-900 d-none d-md-flex">
-                         <img src=" assets/imgs/hero/hero-1/brand-6.png" alt="brand" />
-                     </div>
+                     @forelse ($skills as $item)
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="{{ assets($item->file_manager->public_path) }}" alt="brand" />
+                         </div>
+                     @empty
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="assets/imgs/hero/hero-1/brand-1.png" alt="brand" />
+                         </div>
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="assets/imgs/hero/hero-1/brand-2.png" alt="brand" />
+                         </div>
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="assets/imgs/hero/hero-1/brand-3.png" alt="brand" />
+                         </div>
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="assets/imgs/hero/hero-1/brand-4.png" alt="brand" />
+                         </div>
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
+                             <img src="assets/imgs/hero/hero-1/brand-5.png" alt="brand" />
+                         </div>
+                         <div class="brand-logo icon-xl icon-shape rounded-3 bg-900 d-none d-md-flex">
+                             <img src=" assets/imgs/hero/hero-1/brand-6.png" alt="brand" />
+                         </div>
+                     @endforelse
                  </div>
              </div>
          </div>

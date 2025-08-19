@@ -3,7 +3,7 @@
 <main id="mainContent">
     <!-- prettier-ignore -->
             <!--Home 1 Section 1-->
-    <x-frontend.hero :resume="$resume" :user="$user" />
+    <x-frontend.hero :resume="$resume" :user="$user" :skills="$skills" />
 
     <!--Static 1-->
     <x-frontend.stats />
