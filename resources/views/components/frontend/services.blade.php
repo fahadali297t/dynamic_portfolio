@@ -26,20 +26,16 @@
                         data-img="{{ asset($service->file_manager->public_path) }}">
                         <div class="service-card-details d-lg-flex align-items-center">
                             <h3 class="service-card-title w-lg-50 w-100 mb-0">
-                                <a href="{{ route('user.services.view', ['id' => $service->id]) }}">
+                                <a href="{{ route('user.services.view', ['id' => $service->slug]) }}">
                                     <span class="service-number">
-                                        @php
-                                            if ($i < 10) {
-                                                echo '0' . $i++;
-                                            } else {
-                                                echo $i++;
-                                            }
+                                        @php    
+                                            echo '0' . $i++;
                                         @endphp
                                     </span>
                                     {{ $service->name }}
                                 </a>
                             </h3>
-                            <a href="{{ route('user.services.view', ['id' => $service->id]) }}"
+                            <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                 class="d-md-flex d-block ps-lg-10 align-items-center justify-content-end w-100">
                                 <p class="service-card-text my-3">
                                     {{ $service->short_description }}

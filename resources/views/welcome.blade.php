@@ -23,7 +23,7 @@
     <x-frontend.skills :skills="$skills" />
 
     <!-- brands 1 -->
-    <x-frontend.brands />
+    <x-frontend.brands :brands="$brands" />
 
     <!-- testimonials 1 -->
     <x-frontend.testimonials :testimonial="$testimonial" :user="$user" />

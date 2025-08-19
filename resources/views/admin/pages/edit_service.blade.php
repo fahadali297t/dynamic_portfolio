@@ -47,7 +47,7 @@
                 <div class="card">
                     <div class="d-flex card-body  flex-column justify-content-center align-items-center">
 
-                        <input type="hidden" name="image_id" id="image_id">
+                        <input type="hidden" value="{{ $data->file_manager_id }}" name="image_id" id="image_id">
                         <button id="selectImageBtn" type="button" class="btn btn-outline-primary">
                             Select Image
                         </button>

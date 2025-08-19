@@ -27,17 +27,17 @@
                             <div class="card__image-container zoom-img position-relative">
                                 <img class="card__image" src="{{ asset($work->file_manager->public_path) }}"
                                     alt="zelio" />
-                                <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                                <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                     class="card-image-overlay position-absolute start-0 end-0 w-100 h-100"></a>
                             </div>
                             <div class="card__content px-md-4 px-3">
                                 <div class="card__title d-md-flex align-items-center mb-0 mb-lg-2">
-                                    <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                                    <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                         class="card_title_link">
                                         <p class="text-primary mb-0 mb-md-2">WEB DEVELOPMENT</p>
                                         <h3 class="fw-semibold">Travel Booking Platform</h3>
                                     </a>
-                                    <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                                    <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                         class="card-icon d-none d-md-inline-flex border text-dark border-dark icon-shape ms-auto icon-md rounded-circle">
                                         <i class="ri-arrow-right-up-line"></i>
                                     </a>

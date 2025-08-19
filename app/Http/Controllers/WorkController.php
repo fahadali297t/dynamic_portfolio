@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Services;
 use App\Models\Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class WorkController extends Controller
 {
@@ -102,7 +103,6 @@ class WorkController extends Controller
 
             if ($work) {
                 $work->title = $data['name'];
-
                 $work->short_description = $data['short_description'];
                 $work->description = $data['description'];
                 $work->client = $request->client;

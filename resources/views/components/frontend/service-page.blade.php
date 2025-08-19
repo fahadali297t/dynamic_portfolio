@@ -24,7 +24,7 @@
                         <div class="card-custom" data-index="0">
                             <div class="card__inner bg-6 px-md-5 py-md-6 px-3 py-4">
                                 <div class="card__title d-flex align-items-center mb-md-4 mb-3">
-                                    <a href="{{ route('user.services.view', ['id' => $service->id]) }}"
+                                    <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                         class="card_title_link">
                                         <h3 class="fw-semibold mb-2">{{ $service->name }}</h3>
                                         <p class="mb-0">{{ $service->short_description }}</p>
@@ -37,7 +37,7 @@
                                 <div class="card__image-container zoom-img position-relative">
                                     <img class="card__image" src="{{ asset($service->file_manager->public_path) }}"
                                         alt="service_image" />
-                                    <a href="{{ route('user.services.view', ['id' => $service->id]) }}"
+                                    <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                         class="card-image-overlay position-absolute start-0 end-0 w-100 h-100"></a>
                                 </div>
 

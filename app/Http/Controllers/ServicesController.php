@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Services;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class ServicesController extends Controller
@@ -27,7 +27,7 @@ class ServicesController extends Controller
     public function addService(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|unique:services,name',
+            'name' => 'required',
             'short_description' => 'required|string|max:255',
             'description' => 'required',
             'image_id' => 'required',

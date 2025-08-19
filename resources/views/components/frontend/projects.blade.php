@@ -39,17 +39,17 @@
              @forelse ($works as $work)
                  <div class="filter-item col-lg-6 col-12 brand fil-{{ $work->services->id }} app">
                      <div class="project-item rounded-4 overflow-hidden position-relative p-md-4 p-3 bg-white">
-                         <a href="{{ route('user.projects.view', ['id' => $work->id]) }}">
+                         <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}">
                              <img class="rounded-3 w-100 zoom-img" src="{{ asset($work->file_manager->public_path) }}"
                                  alt="zelio" />
                          </a>
                          <div class="d-flex align-items-center mt-4">
-                             <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                             <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                  class="project-card-content">
                                  <h3 class="fw-semibold">{{ $work->title }}</h3>
                                  <p>{{ $work->client }}</p>
                              </a>
-                             <a href="{{ route('user.projects.view', ['id' => $work->id]) }}"
+                             <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                  class="project-card-icon icon-shape ms-auto icon-md rounded-circle">
                                  <i class="ri-arrow-right-up-line"></i>
                              </a>

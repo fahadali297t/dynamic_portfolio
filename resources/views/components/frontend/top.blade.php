@@ -15,7 +15,7 @@
         $icon = \App\Models\Setting::first()->icon;
     @endphp
     <link rel="shortcut icon" type="image/x-icon"
-        href="{{ asset($icon ?? "'assets/imgs/template/favicon-gradient.svg'") }}" />
+        href="{{ asset($icon ?? 'assets/imgs/template/favicon-gradient.svg') }}" />
     <!-- Libs CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/vendors/bootstrap.min.css') }} " />
     <link rel="stylesheet" href="{{ asset('assets/css/vendors/swiper-bundle.min.css') }} " />

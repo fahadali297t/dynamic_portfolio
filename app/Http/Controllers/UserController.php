@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Designer;
 use App\Models\Education;
 use App\Models\Experience;
@@ -18,25 +19,25 @@ class UserController extends Controller
 {
     public function viewHome()
     {
-        $services = Services::with('file_manager')->orderBy('id', 'desc')->get();
+        $services = Services::with('file_manager')->orderBy('id', 'desc')->limit(5)->get();
         $testimonials = Testimonial::with('file_manager')->orderBy('id', 'desc')->get();
         $work = Work::with(['services', 'file_manager'])->get();
         $educations = Education::get();
         $experiences = Experience::get();
         $skills = Skill::paginate(6);
         $user = Designer::first();
+        $brands = Brand::get();
         $resume_id = "";
         $resume = '';
+
 
 
         $designer = Designer::with(['file_manager' => function ($query) {
             $query->where('ext', 'pdf');
         }])->first();
-        if ($designer) {
-            $resume_id = $designer->file_manager[0]->id;
-        }
 
-        if ($resume_id) {
+        if ($designer && $designer->file_manager->count() > 0) {
+            $resume_id = $designer->file_manager[0]->id;
             $resume = $designer->file_manager[0]->public_path;
         }
         return view(
@@ -49,6 +50,7 @@ class UserController extends Controller
                 'skills' => $skills,
                 'resume' => $resume,
                 'user' => $user,
+                'brands' => $brands,
                 'testimonial' => $testimonials
             ]
         );
@@ -63,9 +65,12 @@ class UserController extends Controller
     public function singleService(Request $request)
     {
         // return $request->id;
-        $service = Services::with('file_manager')->findorfail($request->id);
-
-        return view('frontend.single_service', ['service' => $service]);
+        $service = Services::with('file_manager')->where('slug', $request->id)->first();
+        if ($service) {
+            return view('frontend.single_service', ['service' => $service]);
+        } else {
+            abort(404);
+        }
     }
 
     public function projects()
@@ -77,9 +82,12 @@ class UserController extends Controller
     public function singleProject(Request $request)
     {
         // return $request->id;
-        $work = Work::with('file_manager', 'services')->findorfail($request->id);
-
-        return view('frontend.single_project', ['work' => $work]);
+        $work = Work::with('file_manager', 'services')->where('slug', $request->id)->first();
+        if ($work) {
+            return view('frontend.single_project', ['work' => $work]);
+        } else {
+            abort(404);
+        }
     }
 
 

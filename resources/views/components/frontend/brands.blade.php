@@ -13,36 +13,12 @@
          <!-- Carausel Scroll -->
          <div class="carouselTicker carouselTicker-right mt-5 position-relative z-1">
              <ul class="carouselTicker__list">
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-1.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-2.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-3.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-4.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-5.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-6.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-7.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-8.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-9.png" alt="zelio" />
-                 </li>
-                 <li class="carouselTicker__item">
-                     <img src="assets/imgs/brands/brands-1/logo-10.png" alt="zelio" />
-                 </li>
+                 @forelse ($brands as $item)
+                     <li class="carouselTicker__item">
+                         <img src="{{ asset($item->file_manager->public_path) }}" alt="zelio" />
+                     </li>
+                 @empty
+                 @endforelse
              </ul>
          </div>
      </div>

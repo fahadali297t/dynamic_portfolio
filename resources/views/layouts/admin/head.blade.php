@@ -8,7 +8,7 @@
     @php
         $icon = \App\Models\Setting::first()->icon;
     @endphp
-    <link rel="icon" href="{{ asset($icon ?? "'assets/imgs/template/favicon-gradient.svg'") }}" type="image/png" />
+    <link rel="icon" href="{{ asset($icon ?? 'assets/imgs/template/favicon-gradient.svg') }}" type="image/png" />
 
     <link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
