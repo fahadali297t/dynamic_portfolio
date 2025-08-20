@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin',
+            'name' => 'Apexvim',
             'email' => 'admin@example.com',
             'password' => '$2y$12$u8rCNPsIImiwvPw/m5.bX.OVeYjfq4I55Ajl40r6yQcLw/Fi9muvW'
         ]);

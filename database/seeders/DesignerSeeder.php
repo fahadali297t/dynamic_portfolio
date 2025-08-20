@@ -14,9 +14,9 @@ class DesignerSeeder extends Seeder
     public function run(): void
     {
         Designer::create([
-            'name' => 'John Doe',
-            'phone_number' => '+92 3001234567',
-            'email' => 'john@example.com',
+            'name' => 'Apexvim',
+            'phone_number' => '+923001234567',
+            'email' => 'admin@apexvim.com',
         ]);
     }
 }
