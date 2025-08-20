@@ -24,7 +24,7 @@
                         <div class="card-custom" data-index="0">
                             <div class="card__inner bg-6 px-md-5 py-md-6 px-3 py-4">
                                 <div class="card__title d-flex align-items-center mb-md-4 mb-3">
-                                    <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
+                                    <a href="{{ route('user.services.view', ['id' => $service->php]) }}"
                                         class="card_title_link">
                                         <h3 class="fw-semibold mb-2">{{ $service->name }}</h3>
                                         <p class="mb-0">{{ $service->short_description }}</p>
