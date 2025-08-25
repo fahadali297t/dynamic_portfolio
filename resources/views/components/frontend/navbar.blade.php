@@ -160,9 +160,9 @@
       <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2">
           <div class="mobile-header-wrapper-inner">
               <div class="mobile-header-logo">
-                  <a class="d-flex main-logo align-items-center d-inline-flex" href="index.html">
-                      <img src="{{ asset('assets/imgs/footer-1/logo.svg') }}" alt="zelio" />
-                      <span class="fs-4 ms-2 text-dark">william.design</span>
+                  <a class="d-flex main-logo align-items-center d-inline-flex" href="{{ route('home') }}">
+                      <img src="{{ asset($icon ?? 'assets/imgs/template/favicon.svg') }}" alt="zelio" />
+                      <span class="fs-4 ms-2 text-dark">{{ $user->name }}</span>
                   </a>
                   <div class="burger-icon burger-icon-white border rounded-3">
                       <span class="burger-icon-top"></span>

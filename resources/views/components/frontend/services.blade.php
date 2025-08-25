@@ -34,15 +34,16 @@
                                     </span>
                                     {{ $service->name }}
                                 </a>
+                                <div class="service-card-icon  icon-shape ms-5 icon-md rounded-circle border">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </div>
                             </h3>
                             <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                 class="d-md-flex d-block ps-lg-10 align-items-center justify-content-end w-100">
                                 <p class="service-card-text my-3">
                                     {{ $service->short_description }}
                                 </p>
-                                <div class="service-card-icon icon-shape ms-auto icon-md rounded-circle border">
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
+
                             </a>
                         </div>
                     </div>
