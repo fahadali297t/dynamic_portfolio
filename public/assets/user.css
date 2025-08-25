@@ -20,3 +20,47 @@
 .text_white {
     color: white !important;
 }
+
+[data-bs-theme="light"] #upwork path {
+    fill: #000000; /* black in light theme */
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] #upwork path {
+    fill: #ffffff; /* white in dark theme */
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="light"] #fiverr path {
+    fill: #000000; /* black in light theme */
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] #fiverr path {
+    fill: #ffffff; /* white in dark theme */
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="light"] #fiverr:hover path {
+    fill: #6e4ef2; /* black in light theme */
+}
+
+[data-bs-theme="light"] #upwork:hover path {
+    fill: #6e4ef2; /* white in dark theme */
+}
+
+[data-bs-theme="dark"] #fiverr:hover path {
+    fill: #6e4ef2; /* black in light theme */
+}
+
+[data-bs-theme="dark"] #upwork:hover path {
+    fill: #6e4ef2; /* white in dark theme */
+}
+
+[data-bs-theme="dark"] #fiverr-nav:hover path {
+    fill: #6e4ef2; /* black in light theme */
+}
+
+[data-bs-theme="dark"] #upwork-nav:hover path {
+    fill: #6e4ef2; /* white in dark theme */
+}

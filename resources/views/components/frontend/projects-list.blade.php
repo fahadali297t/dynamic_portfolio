@@ -4,11 +4,13 @@
             <div class="col-lg-8 mx-lg-auto">
                 <div class="text-center">
                     <div class="btn btn-gradient d-inline-block text-uppercase">recent Work</div>
-                    <h3 class="ds-3 mt-3 mb-4 text-dark">Explore <span class="text-300">My Latest Work and Discover
-                            the</span> Craftsmanship Behind <span class="text-300">Each Design</span></h3>
+                    <h3 class="ds-3 mt-3 mb-4 text-dark">Explore <span class="text-300">My Latest Edits and Experience
+                            the</span> Creativity Behind <span class="text-300">Each Frame</span></h3>
                     <p class="text-300 fs-5">
-                        Explore my latest work and discover the craftsmanship behind each design: <br />
-                        a detailed look into how I bring innovation and creativity to life
+                        Explore my latest work and discover the artistry behind each edit: <br> a detailed look into how
+                        I
+                        bring
+                        creativity and storytelling to life on screen.
                     </p>
                 </div>
             </div>
@@ -34,8 +36,8 @@
                                 <div class="card__title d-md-flex align-items-center mb-0 mb-lg-2">
                                     <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                         class="card_title_link">
-                                        <p class="text-primary mb-0 mb-md-2">WEB DEVELOPMENT</p>
-                                        <h3 class="fw-semibold">Travel Booking Platform</h3>
+                                        <p class="text-primary mb-0 mb-md-2">{{ $work->services->name }}</p>
+                                        <h3 class="fw-semibold">{{ $work->title }}</h3>
                                     </a>
                                     <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
                                         class="card-icon d-none d-md-inline-flex border text-dark border-dark icon-shape ms-auto icon-md rounded-circle">

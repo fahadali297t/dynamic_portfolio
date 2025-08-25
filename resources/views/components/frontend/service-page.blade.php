@@ -5,9 +5,9 @@
                 <div class="text-center">
                     <div class="btn btn-gradient d-inline-block text-uppercase">My Services</div>
                     <h3 class="ds-3 mt-3 mb-4 text-dark">
-                        Transforming Ideas
-                        <span class="text-300">into Intuitive Designs for</span>
-                        Engaging User
+                        Transforming
+                        <span class="text-300"> every frame into a compelling visual experience</span>
+                        that resonates and engages
                         <span class="text-300">Experiences</span>
                     </h3>
                     {{-- <p class="text-300 fs-5">
@@ -24,7 +24,7 @@
                         <div class="card-custom" data-index="0">
                             <div class="card__inner bg-6 px-md-5 py-md-6 px-3 py-4">
                                 <div class="card__title d-flex align-items-center mb-md-4 mb-3">
-                                    <a href="{{ route('user.services.view', ['id' => $service->php]) }}"
+                                    <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                         class="card_title_link">
                                         <h3 class="fw-semibold mb-2">{{ $service->name }}</h3>
                                         <p class="mb-0">{{ $service->short_description }}</p>

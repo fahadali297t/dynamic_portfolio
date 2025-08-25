@@ -1,12 +1,21 @@
  <section class="section-hero-1 position-relative pt-200 pb-120 overflow-hidden">
      <div class="container position-relative z-3">
          <div class="row">
-             <div class="col-lg-6 col-md-12">
+             <div class="col-lg-8  col-md-12">
                  <span class="text-dark">👋 Hi there, I'm {{ $user->name }}</span>
-                 <h1 class="ds-2 mb-3">Crafting Intuitive <span class="text-primary">Digital Experiences</span>
+                 <h1 class="ds-2 mb-3">Your Vision, My Editing <br> <span class="text-primary">Let’s Create Something
+                         Remarkable
+                     </span>
                  </h1>
-                 <p class="text-300 mb-6">I assist individuals and brands in achieving their objectives by
-                     creating and developing user-focused digital products and interactive experiences.</p>
+                 <p class="text-300 col-12 col-md-8  mb-6">“Ever watched your videos and thought, ‘It’s fine… but it
+                     could be
+                     better’? Let’s change that. I’m here to
+                     transform your raw footage into engaging, high-quality videos that truly stand out. From YouTube
+                     content,
+                     documentaries, talking head videos, faceless cash cow content, business promos, reels, and
+                     more—I’ve
+                     got you covered. A full-time video editor, ready to bring your vision to life!”
+                 </p>
                  @if ($resume)
                      <a href="{{ asset($resume) }}" download="resume.pdf" class="btn btn-gradient me-2">
                          Download CV
@@ -22,11 +31,11 @@
                      <span>Hire me</span>
                      <i class="ri-arrow-right-line ms-2"></i>
                  </a>
-                 <p class="text-400 mt-6 mb-3">+ 12 years with professional design software</p>
+                 <p class="text-400 mt-6 mb-3">+ 5 years of professional video editing.</p>
                  <div class="d-flex gap-3">
                      @forelse ($skills as $item)
                          <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">
-                             <img src="{{ assets($item->file_manager->public_path) }}" alt="brand" />
+                             <img src="{{ asset($item->file_manager->public_path) }}" alt="brand" />
                          </div>
                      @empty
                          <div class="brand-logo icon-xl icon-shape rounded-3 bg-900">

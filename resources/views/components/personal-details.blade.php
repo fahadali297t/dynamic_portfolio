@@ -56,15 +56,21 @@
                                              id="linkedin" name="linkedin">
                                      </div>
                                      <div class="col-12 col-md-6">
-                                         <label class="form-label">Behance</label>
-                                         <input type="text" value="{{ $details->behance }}" class="form-control"
+                                         <label class="form-label">Youtube</label>
+                                         <input type="text" value="{{ $details->youtube }}" class="form-control"
                                              id="behance" name="behance">
                                      </div>
                                      <div class="col-12 col-md-6">
-                                         <label class="form-label">Dribble</label>
-                                         <input type="text" value="{{ $details->dribble }}" class="form-control"
+                                         <label class="form-label">Fiverr</label>
+                                         <input type="text" value="{{ $details->fiverr }}" class="form-control"
                                              id="dribble" name="dribble">
                                      </div>
+                                     <div class="col-12 col-md-6">
+                                         <label class="form-label">Upwork</label>
+                                         <input type="text" value="{{ $details->upwork }}" class="form-control"
+                                             id="upwork" name="upwork">
+                                     </div>
+
                                      <input type="hidden" name="id" value="{{ $details->id }}">
 
                                      {{--  --}}

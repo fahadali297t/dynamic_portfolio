@@ -4,9 +4,8 @@
              <div class="col-lg-8">
                  <h3 class="ds-3 mt-3 mb-3 text-primary">Client's Testimonials</h3>
                  <span class="fs-5 fw-medium text-200">
-                     I believe that working hard and trying to learn every day will make me
-                     <br />
-                     improve in satisfying my customers.
+                     Genuine feedback from Fiverr and Upwork clients who placed their trust in my skills and <br>
+                     experienced the value I bring to their projects.
                  </span>
                  <div class="row mt-8">
                      <div class="swiper slider-2 pt-2 pb-3">

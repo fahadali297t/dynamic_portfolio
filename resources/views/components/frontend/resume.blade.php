@@ -5,9 +5,8 @@
             <div class="col-lg-7 me-auto">
                 <h3 class="ds-3 mt-3 mb-3 text-primary">My Resume</h3>
                 <span class="fs-5 fw-medium text-200">
-                    I believe that working hard and trying to learn every day will
-                    <br />
-                    make me improve in satisfying my customers.
+                    I believe that consistent hard work and a commitment to learning every day <br> allow me to
+                    continuously improve and deliver the best results for my clients.
                 </span>
             </div>
             <div class="col-lg-auto">
@@ -71,10 +70,10 @@
             </div>
         </div>
     </div>
-    <div class="scroll-move-right position-relative pb-160 pt-lg-150">
+    {{-- <div class="scroll-move-right position-relative pb-160 pt-lg-150">
         <div
             class="d-flex align-items-center gap-5 wow img-custom-anim-top position-absolute top-50 start-50 translate-middle">
-            <h3 class="stroke fs-150 text-uppercase text-white">Branding . Marketing . User Interface</h3>
+            <h3 class="stroke fs-150 text-uppercase text-white">Editing. Story Telling</h3>
         </div>
-    </div>
+    </div> --}}
 </section>

@@ -22,9 +22,9 @@ class UserController extends Controller
         $services = Services::with('file_manager')->orderBy('id', 'desc')->limit(5)->get();
         $testimonials = Testimonial::with('file_manager')->orderBy('id', 'desc')->get();
         $work = Work::with(['services', 'file_manager'])->get();
-        $educations = Education::get();
-        $experiences = Experience::get();
-        $skills = Skill::paginate(6);
+        $educations = Education::limit(5)->orderBy('id', 'desc')->get();
+        $experiences = Experience::limit(5)->orderBy('id', 'desc')->get();
+        $skills = Skill::limit(5)->orderBy('id', 'desc')->get();
         $user = Designer::first();
         $brands = Brand::get();
         $resume_id = "";

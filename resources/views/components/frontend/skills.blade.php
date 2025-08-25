@@ -4,10 +4,9 @@
              <div class="text-center mb-7">
                  <h3 class="ds-3 mt-3 mb-3 text-primary">My Skills</h3>
                  <span class="fs-5 fw-medium text-200">
-                     I thrive on turning complex problems into simple, beautiful
+                     I thrive on transforming raw footage into engaging, polished videos that not only tell a story
                      <br class="d-md-block d-none" />
-                     solutions that enhance user satisfaction.
-                 </span>
+                     but also captivate and satisfy the audience. </span>
              </div>
              <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center gap-3 mb-7 px-6">
                  @forelse ($skills as $skill)
@@ -103,15 +102,7 @@
                  @endforelse
 
              </div>
-             <div class="text-center">
-                 <p class="fs-5 text-200 mb-0">In addition, I have some programming knowledge such as:</p>
-                 <div class="d-flex justify-content-center gap-1">
-                     <a href="#" class="fs-5 fw-bold">HTML,</a>
-                     <a href="#" class="fs-5 fw-bold">CSS,</a>
-                     <a href="#" class="fs-5 fw-bold">Javascript,</a>
-                     <a href="#" class="fs-5 fw-bold">Bootstrap,</a>
-                 </div>
-             </div>
+
          </div>
      </div>
  </section>

@@ -26,8 +26,9 @@ class DesignerController extends Controller
             $user->facebook = $request->facebook;
             $user->instagram = $request->instagram;
             $user->linkedin = $request->linkedin;
-            $user->behance = $request->behance;
-            $user->dribble = $request->dribble;
+            $user->youtube = $request->behance;
+            $user->fiverr = $request->dribble;
+            $user->upwork = $request->upwork;
             $user->save();
             return redirect()->route('dashboard')->with('success', 'Record Updated');
         } else {

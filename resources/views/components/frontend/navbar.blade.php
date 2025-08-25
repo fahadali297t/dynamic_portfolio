@@ -48,21 +48,34 @@
               </div>
               <div class="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
                   <div class="d-md-flex d-none gap-3">
-                      <a href="{{ $user->facebook }}">
+                      <a target="_blank" href="{{ $user->facebook }}">
                           <i class="ri-facebook-circle-fill fs-18"></i>
                       </a>
-                      <a href="{{ $user->instagram }}">
+                      <a target="_blank" href="{{ $user->instagram }}">
                           <i class="ri-instagram-line fs-18"></i>
                       </a>
-                      <a href="{{ $user->linkedin }}">
+                      <a target="_blank" href="{{ $user->linkedin }}">
                           <i class="ri-linkedin-fill fs-18"></i>
                       </a>
-                      <a href="{{ $user->dribble }}">
-                          <i class="ri-dribbble-fill fs-18"></i>
+                      <a target="_blank" href="{{ $user->youtube }}">
+                          <i class="ri-youtube-fill fs-18"></i>
                       </a>
-                      <a href="{{ $user->behance }}">
-                          <i class="ri-behance-fill fs-18"></i>
+
+                      <a target="_blank" href="{{ $user->fiverr }}">
+                          <svg id="fiverr-nav" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                              height="20px" viewBox="-2.5 -2 24 24" preserveAspectRatio="xMinYMin"
+                              class="jam jam-fiverr">
+                              <path
+                                  d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75h-2.5z" />
+                              <circle cx="14.375" cy="1.875" r="1.875" />
+                          </svg>
                       </a>
+                      <a target="_blank" href="{{ $user->upwork }}">
+                          <svg id="upwork-nav" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                              height="20px" viewBox="0 0 32 32">
+                              <path
+                                  d="M24.75 17.542c-1.469 0-2.849-0.62-4.099-1.635l0.302-1.432 0.010-0.057c0.276-1.521 1.13-4.078 3.786-4.078 1.99 0 3.604 1.615 3.604 3.604 0 1.984-1.615 3.599-3.604 3.599zM24.75 6.693c-3.385 0-6.016 2.198-7.083 5.818-1.625-2.443-2.865-5.38-3.583-7.854h-3.646v9.484c-0.005 1.875-1.521 3.391-3.396 3.396-1.875-0.005-3.391-1.526-3.396-3.396v-9.484h-3.646v9.484c0 3.885 3.161 7.068 7.042 7.068 3.885 0 7.042-3.182 7.042-7.068v-1.589c0.708 1.474 1.578 2.974 2.635 4.297l-2.234 10.495h3.729l1.62-7.615c1.417 0.906 3.047 1.479 4.917 1.479 4 0 7.25-3.271 7.25-7.266 0-4-3.25-7.25-7.25-7.25z" />
+                          </svg> </a>
                   </div>
                   <div class="burger-icon burger-icon-white border rounded-3">
                       <span class="burger-icon-top"></span>
@@ -111,20 +124,33 @@
               <div class="contact-list">
                   <p class="text-400 fs-5 mb-2">Social</p>
                   <div class="d-md-flex d-none gap-3">
-                      <a href="{{ $user->facebook }}">
+                      <a target="_blank" href="{{ $user->facebook }}">
                           <i class="ri-facebook-circle-fill fs-18"></i>
                       </a>
-                      <a href="{{ $user->instagram }}">
+                      <a target="_blank" href="{{ $user->instagram }}">
                           <i class="ri-instagram-line fs-18"></i>
                       </a>
-                      <a href="{{ $user->linkedin }}">
+                      <a target="_blank" href="{{ $user->linkedin }}">
                           <i class="ri-linkedin-fill fs-18"></i>
                       </a>
-                      <a href="{{ $user->dribble }}">
-                          <i class="ri-dribbble-fill fs-18"></i>
+                      <a target="_blank" href="{{ $user->youtube }}">
+                          <i class="ri-youtube-fill"></i> </a>
+                      <a target="_blank" href="{{ $user->fiverr }}">
+                          <svg id="fiverr" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                              height="20px" viewBox="-2.5 -2 24 24" preserveAspectRatio="xMinYMin"
+                              class="jam jam-fiverr">
+                              <path
+                                  d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75h-2.5z" />
+                              <circle cx="14.375" cy="1.875" r="1.875" />
+                          </svg>
                       </a>
-                      <a href="{{ $user->behance }}">
-                          <i class="ri-behance-fill fs-18"></i>
+
+                      <a target="_blank" href="{{ $user->upwork }}">
+                          <svg id="upwork" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                              height="20px" viewBox="0 0 32 32">
+                              <path
+                                  d="M24.75 17.542c-1.469 0-2.849-0.62-4.099-1.635l0.302-1.432 0.010-0.057c0.276-1.521 1.13-4.078 3.786-4.078 1.99 0 3.604 1.615 3.604 3.604 0 1.984-1.615 3.599-3.604 3.599zM24.75 6.693c-3.385 0-6.016 2.198-7.083 5.818-1.625-2.443-2.865-5.38-3.583-7.854h-3.646v9.484c-0.005 1.875-1.521 3.391-3.396 3.396-1.875-0.005-3.391-1.526-3.396-3.396v-9.484h-3.646v9.484c0 3.885 3.161 7.068 7.042 7.068 3.885 0 7.042-3.182 7.042-7.068v-1.589c0.708 1.474 1.578 2.974 2.635 4.297l-2.234 10.495h3.729l1.62-7.615c1.417 0.906 3.047 1.479 4.917 1.479 4 0 7.25-3.271 7.25-7.266 0-4-3.25-7.25-7.25-7.25z" />
+                          </svg>
                       </a>
                   </div>
               </div>

@@ -6,7 +6,7 @@
                     <div class="counter-item-cover counter-item">
                         <div class="content text-center mx-auto d-flex align-items-center">
                             <span class="ds-3 count text-primary fw-medium my-0">+<span
-                                    class="odometer ds-1 text-dark fw-semibold" data-count="12"></span></span>
+                                    class="odometer ds-1 text-dark fw-semibold" data-count="5"></span></span>
                             <div class="text-start ms-2">
                                 <p class="fs-5 mb-0 text-300">Year of</p>
                                 <p class="fs-5 mb-0 fw-bold">Experience</p>
@@ -18,7 +18,7 @@
                     <div class="counter-item-cover counter-item">
                         <div class="content text-center mx-auto d-flex align-items-center">
                             <span class="ds-3 count text-primary fw-medium my-0">+<span
-                                    class="odometer ds-1 text-dark fw-semibold" data-count="250"></span></span>
+                                    class="odometer ds-1 text-dark fw-semibold" data-count="500"></span></span>
                             <div class="text-start ms-2">
                                 <p class="fs-5 mb-0 text-300">Projects</p>
                                 <p class="fs-5 mb-0 fw-bold">Completed</p>
@@ -30,7 +30,7 @@
                     <div class="counter-item-cover counter-item">
                         <div class="content text-center mx-auto d-flex align-items-center">
                             <span class="ds-3 count text-primary fw-medium my-0">+<span
-                                    class="odometer ds-1 text-dark fw-semibold" data-count="680"></span></span>
+                                    class="odometer ds-1 text-dark fw-semibold" data-count="150"></span></span>
                             <div class="text-start ms-2">
                                 <p class="fs-5 mb-0 text-300">Satisfied</p>
                                 <p class="fs-5 mb-0 fw-bold">Happy Clients</p>
@@ -41,11 +41,10 @@
                 <div class="col-lg-auto col-md-6">
                     <div class="counter-item-cover counter-item">
                         <div class="content text-center mx-auto d-flex align-items-center">
-                            <span class="ds-3 count text-primary fw-medium my-0">+<span
-                                    class="odometer ds-1 text-dark fw-semibold" data-count="18"></span></span>
+                            <span class="ds-3 count text-primary fw-medium my-0">+</span>
                             <div class="text-start ms-2">
-                                <p class="fs-5 mb-0 text-300">Awards</p>
-                                <p class="fs-5 mb-0 fw-bold">Won Received</p>
+                                <p class="fs-5 mb-0 text-300">Top</p>
+                                <p class="fs-5 mb-0 fw-bold">Rated Seller</p>
                             </div>
                         </div>
                     </div>

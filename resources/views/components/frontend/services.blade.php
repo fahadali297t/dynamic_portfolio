@@ -3,10 +3,10 @@
         <div class="row align-items-end">
             <div class="col-lg-7 me-auto">
                 <h3 class="ds-3 mt-3 mb-3 text-primary">What do I offer?</h3>
-                <span class="fs-5 fw-medium text-200">My journey started with a fascination for design and
-                    technology,
-                    <br />
-                    leading me to specialize in UI/UX design
+                <span class="fs-5 fw-medium text-200">My journey started with a passion for storytelling through visuals,
+                    <br>
+                    which led me to specialize in
+                    video editing and transforming ideas into engaging content.
                 </span>
             </div>
             <div class="col-lg-auto">
@@ -28,7 +28,7 @@
                             <h3 class="service-card-title w-lg-50 w-100 mb-0">
                                 <a href="{{ route('user.services.view', ['id' => $service->slug]) }}">
                                     <span class="service-number">
-                                        @php    
+                                        @php
                                             echo '0' . $i++;
                                         @endphp
                                     </span>

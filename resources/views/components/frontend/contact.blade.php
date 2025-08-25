@@ -6,9 +6,8 @@
     <div class="container position-relative z-1">
         <h3 class="ds-3 mt-3 mb-3 text-primary">Get in touch</h3>
         <span class="fs-5 fw-medium text-200">
-            I'm always excited to take on new projects and collaborate with innovative minds. If you
-            <br />
-            have a project in mind or just want to chat about design, feel free to reach out!
+            I’m always excited to take on new projects and collaborate with creative minds. <br> If you have a project
+            in mind—or just want to share ideas—feel free to reach out!
         </span>
         <div class="row mt-8">
             <div class="col-lg-4 d-flex flex-column">
