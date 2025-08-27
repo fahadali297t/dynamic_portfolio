@@ -32,6 +32,7 @@ class WorkController extends Controller
             'description' => 'required',
             'service_id' => 'required',
             'image_id' => 'required',
+            'link' => 'required'
         ]);
 
 
@@ -94,6 +95,7 @@ class WorkController extends Controller
             'description' => 'required',
             'service_id' => 'required',
             'image_id' => 'required',
+            'link' => 'required'
         ]);
 
 

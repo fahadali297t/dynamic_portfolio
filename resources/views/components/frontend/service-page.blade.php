@@ -8,7 +8,6 @@
                         Transforming
                         <span class="text-300"> every frame into a compelling visual experience</span>
                         that resonates and engages
-                        <span class="text-300">Experiences</span>
                     </h3>
                     {{-- <p class="text-300 fs-5">
                         With expertise in mobile app and web design, I transform ideas into visually <br />
@@ -23,13 +22,13 @@
                         @forelse ($services as $service)
                         <div class="card-custom" data-index="0">
                             <div class="card__inner bg-6 px-md-5 py-md-6 px-3 py-4">
-                                <div class="card__title d-flex align-items-center mb-md-4 mb-3">
+                                <div class="card__title d-flex align-items-center mb-md-4 me-3 mb-3">
                                     <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                         class="card_title_link">
                                         <h3 class="fw-semibold mb-2">{{ $service->name }}</h3>
                                         <p class="mb-0">{{ $service->short_description }}</p>
                                     </a>
-                                    <a href="#"
+                                    <a href="{{ route('user.services.view', ['id' => $service->slug]) }}"
                                         class="card-icon border text-dark border-dark icon-shape ms-auto icon-md rounded-circle">
                                         <i class="ri-arrow-right-up-line"></i>
                                     </a>

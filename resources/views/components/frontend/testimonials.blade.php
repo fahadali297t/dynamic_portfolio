@@ -1,4 +1,6 @@
- <section class="section-testimonials-1 position-relative pt-120 pb-120 bg-900 overflow-hidden">
+ <section class="section-testimonials-1 position-relative pt-120 pb-120 bg-900 overflow-hidden"
+     data-background="assets/imgs/projects/projects-1/background.png">
+
      <div class="container">
          <div class="row">
              <div class="col-lg-8">

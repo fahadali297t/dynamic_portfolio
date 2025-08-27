@@ -1,4 +1,4 @@
-<section id="resume" class="section-resume-1 position-relative pt-150 overflow-hidden"
+<section id="resume" class="section-resume-1 pb-5 position-relative pt-150 overflow-hidden"
     data-background="assets/imgs/projects/projects-1/background.png">
     <div class="container">
         <div class="row align-items-end">

@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="p-5">
         <div class="row">
             <div class="card-scroll mt-8">
                 <div class="cards">
@@ -27,10 +27,14 @@
                     <div class="card-custom" data-index="0">
                         <div class="card__inner bg-6 p-lg-6 p-md-4 p-3">
                             <div class="card__image-container zoom-img position-relative">
-                                <img class="card__image" src="{{ asset($work->file_manager->public_path) }}"
+                                {{-- <img class="card__image" src="{{ asset($work->file_manager->public_path) }}"
                                     alt="zelio" />
                                 <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
-                                    class="card-image-overlay position-absolute start-0 end-0 w-100 h-100"></a>
+                                    class="card-image-overlay position-absolute start-0 end-0 w-100 h-100"></a> --}}
+                                <iframe width="100%" height="100%" src="{{ $work->link }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="card__content px-md-4 px-3">
                                 <div class="card__title d-md-flex align-items-center mb-0 mb-lg-2">

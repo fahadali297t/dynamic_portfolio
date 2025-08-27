@@ -4390,7 +4390,7 @@ textarea.form-control {
     text-transform: uppercase;
     paint-order: stroke fill;
 }
-
+/* Hello */
 .section-skills-1 .skills {
     padding: 29px 35px 25px;
     border-radius: 16px;
@@ -4602,7 +4602,7 @@ textarea.form-control {
     aspect-ratio: 1;
 }
 .section-work .card-scroll .cards .card-custom .card__inner .card__content {
-    padding: 40px 0px 40px 40px;
+    /* padding: 40px 0px 40px 40px; */
     display: flex;
     flex-direction: column;
 }
@@ -4678,8 +4678,8 @@ textarea.form-control {
         .card__image-container {
         display: flex;
         border-radius: 11px;
-        width: 400px;
-        height: 100%;
+        width: 600px;
+        height: auto;
         flex-shrink: 0;
     }
     .section-work
@@ -4814,13 +4814,16 @@ textarea.form-control {
         font-size: 24px;
         color: #16263a;
     }
+    .ds-3 {
+        font-size: 46px !important;
+    }
 }
 @media (max-width: 767.98px) {
     .ds-2 {
         font-size: 48px !important;
     }
     .ds-3 {
-        font-size: 32px !important;
+        font-size: 26px !important;
     }
     .fs-5 {
         font-size: 16px !important;
@@ -15352,3 +15355,56 @@ strong {
         center;
 }
 /*# sourceMappingURL=main.css.map */
+
+@media (max-width: 1050px) and (min-width: 992px) {
+    .section-work .card-scroll .cards .card-custom .card__inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section-work
+        .card-scroll
+        .cards
+        .card-custom
+        .card__inner
+        .card__image-container {
+        height: 400px;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 791px) {
+    .project-iframe-video {
+        height: 500px !important;
+    }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+    .project-iframe-video {
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 401px) {
+    .project-iframe-video {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-work
+        .card-scroll
+        .cards
+        .card-custom
+        .card__inner
+        .card__image-container {
+        height: 120px;
+    }
+    .project-iframe-video {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .home-project {
+        height: 200px !important;
+    }
+}

@@ -15,23 +15,29 @@
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Start</p>
-                    <h6>{{ $project->start ?? 'Not Specified' }}</h6>
+                    <h6>{{ \Carbon\Carbon::parse($project->start)->format('d M Y') ?? 'Not Specified' }}</h6>
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Complete</p>
-                    <h6>{{ $project->complete ?? 'Not Specified' }}</h6>
+                    <h6>{{ \Carbon\Carbon::parse($project->complete)->format('d M Y') ?? 'Not Specified' }}</h6>
                 </div>
                 <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Services</p>
                     <h6>{{ $project->services->name }}</h6>
                 </div>
-                <div class="bg-6 px-5 py-3 rounded-2">
+                {{-- <div class="bg-6 px-5 py-3 rounded-2">
                     <p class="text-300 mb-0">Preview</p>
                     <h6><a href="{{ $project->link ?? '' }}" target="_blank">Click</a></h6>
-                </div>
+                </div> --}}
             </div>
-            <img src="{{ asset($project->file_manager->public_path) }}" alt="zelio" />
-            <div class="col-lg-8 mx-lg-auto mt-8">
+            {{-- <img src="{{ asset($project->file_manager->public_path) }}" alt="zelio" /> --}}
+            <div class="col-lg-10 mx-lg-auto project-iframe-video">
+                <iframe width="100%" height="100%" src="{{ $project->link }}" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-10 mx-lg-auto mt-8">
                 <h5 class="fs-5 fw-medium">Description</h5>
                 <p class="text-300">
                     {!! $project->description !!}

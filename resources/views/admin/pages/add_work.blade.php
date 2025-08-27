@@ -43,9 +43,9 @@
                         </div>
                         {{-- Link  --}}
                         <div>
-                            <label for="link" class="form-label">Link:</label>
-                            <input id="link" value="{{ old('link') }}" name="link" class="form-control mb-3"
-                                type="text" placeholder="Enter Link (Figma, Drive or Behance etc)"
+                            <label for="link" class="form-label">Link*:</label>
+                            <input id="link" required value="{{ old('link') }}" name="link"
+                                class="form-control mb-3" type="text" placeholder="Enter Video Link "
                                 aria-label="default input example">
                             @error('link')
                                 <p class="text-danger" style="font-size: 14px">{{ $message }}</p>
