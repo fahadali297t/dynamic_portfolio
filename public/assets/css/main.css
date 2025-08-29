@@ -1234,8 +1234,8 @@ img {
 }
 
 .icon-md {
-    width: 2.5rem;
-    height: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     line-height: 2.5rem;
 }
 
@@ -4567,6 +4567,8 @@ textarea.form-control {
 }
 .section-work .card-scroll .cards .card-custom {
     position: sticky;
+    max-width: 1440px;
+    margin: auto;
     top: 0;
 }
 .section-work .card-scroll .cards .card-custom .card__inner {
@@ -4574,6 +4576,7 @@ textarea.form-control {
     background: white;
     border-radius: 14px;
     display: flex;
+    align-items: center;
     overflow: hidden;
     box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 0.35);
     transform-origin: center top;
@@ -15354,57 +15357,84 @@ strong {
     background: url(../imgs/template/icons/arrow-right-big-dark.svg) no-repeat
         center;
 }
-/*# sourceMappingURL=main.css.map */
 
-@media (max-width: 1050px) and (min-width: 992px) {
-    .section-work .card-scroll .cards .card-custom .card__inner {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .section-work
-        .card-scroll
-        .cards
-        .card-custom
-        .card__inner
-        .card__image-container {
-        height: 400px;
-        margin-bottom: 20px;
-    }
-}
-@media (min-width: 791px) {
-    .project-iframe-video {
-        height: 500px !important;
-    }
-}
-@media (max-width: 991px) and (min-width: 768px) {
-    .project-iframe-video {
-        height: 350px !important;
-    }
+.iframe-div {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps video in 16:9 */
 }
 
-@media (max-width: 767px) and (min-width: 401px) {
-    .project-iframe-video {
-        height: 200px !important;
-    }
+.iframe-div iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-@media (max-width: 400px) {
-    .section-work
-        .card-scroll
-        .cards
-        .card-custom
-        .card__inner
-        .card__image-container {
-        height: 120px;
+.project-iframe-video,
+.project-list-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps video in 16:9 */
+}
+
+.project-iframe-video iframe,
+.project-list-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.card_title_link,
+.project-card-content {
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .icon-md {
+        display: none !important;
     }
-    .project-iframe-video {
-        height: 200px !important;
+    .icon-md-2 i {
+        padding: 6px !important;
     }
 }
 
-@media (max-width: 550px) {
-    .home-project {
-        height: 200px !important;
+@media (min-width: 769px) {
+    .icon-md-2 {
+        display: none !important;
     }
+}
+
+@media (max-width: 349px) {
+    .section-hero-1 .btn-gradient {
+        margin-bottom: 20px !important;
+    }
+}
+
+.tg-img-reveal-wrapper {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tg-img-reveal-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.tg-img-reveal-wrapper:hover img {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.section-work-single img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }

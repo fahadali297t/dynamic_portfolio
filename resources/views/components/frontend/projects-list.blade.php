@@ -26,7 +26,7 @@
 
                     <div class="card-custom" data-index="0">
                         <div class="card__inner bg-6 p-lg-6 p-md-4 p-3">
-                            <div class="card__image-container zoom-img position-relative">
+                            <div class="project-list-container zoom-img position-relative">
                                 {{-- <img class="card__image" src="{{ asset($work->file_manager->public_path) }}"
                                     alt="zelio" />
                                 <a href="{{ route('user.projects.view', ['id' => $work->slug]) }}"
